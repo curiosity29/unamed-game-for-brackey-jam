@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Unamed game for brackey jam"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="res://Scene/Component/Character/node_2d.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Unamed game for brackey jam"
 
 [input]
 
