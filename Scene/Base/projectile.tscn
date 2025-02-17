@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxyb6nw1e8y7"]
+
+[ext_resource type="Script" uid="uid://bl1tnphjxuelc" path="res://PureScript/BaseNode/damage_area.gd" id="1_1i153"]
+[ext_resource type="Script" uid="uid://c30xflwkkxoty" path="res://PureScript/GameObject/projectile.gd" id="1_hqonh"]
+
+[node name="Projectile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hqonh")
+
+[node name="DamageArea2D" type="Area2D" parent="."]
+script = ExtResource("1_1i153")
+metadata/_custom_type_script = ExtResource("1_1i153")
