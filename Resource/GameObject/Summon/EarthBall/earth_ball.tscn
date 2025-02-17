@@ -6,8 +6,8 @@
 
 [node name="EarthBall" instance=ExtResource("1_a0qwp")]
 custom_minimum_size = Vector2(64, 64)
-offset_right = -1088.0
-offset_bottom = -584.0
+offset_right = -1856.0
+offset_bottom = -1016.0
 script = ExtResource("2_7j4xg")
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]

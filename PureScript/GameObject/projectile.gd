@@ -1,7 +1,7 @@
 class_name Projectile
 extends Control
 
-var move_speed: float = 500.0
+var move_speed: float = 1000.0
 var fire_direction: Vector2 = Vector2.ZERO
 
 
