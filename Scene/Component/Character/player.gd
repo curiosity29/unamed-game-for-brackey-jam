@@ -1,16 +1,20 @@
 class_name Player
 extends CharacterBody2D
 
-var health = 100
-var max_health = 100
 var move_speed = 500
 
 var is_moving: bool = false
 
 var current_skill: Callable
 
+var hittable_interface: HittableInterface
 
+@export var health: int = 100
 
+func _ready() -> void:
+	Instance.player = self
+	
+	hittable_interface = HittableInterface.new(health, self)
 
 func _input(event: InputEvent) -> void:
 	var mouse_pos = get_global_mouse_position()

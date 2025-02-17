@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b48pr1jjmuhay"]
+
+[ext_resource type="Script" uid="uid://d3eadeqakuxuk" path="res://Scene/Base/enemy.gd" id="1_ptqdt"]
+[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_qthqu"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_ptqdt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-59, -59, 60, -58, 63, 59, -60, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qthqu")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

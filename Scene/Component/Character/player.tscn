@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="2_xhw4r"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 128
 script = ExtResource("1_rum4r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+polygon = PackedVector2Array(-54, -56, 58, -58, 57, 59, -59, 56)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xhw4r")

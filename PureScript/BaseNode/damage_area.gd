@@ -9,9 +9,10 @@ func _ready() -> void:
 
 
 func deal_damage(area: Area2D) -> void:
-	var area_onwer = area.owner
-	if area_onwer.has_method("take_damage"):
-		area_onwer.take_damage(damage)
+	var area_owner = area.owner
+	if area_owner.has_meta("hittable_interface"):
+		var hittable_interface: HittableInterface = area_owner.get_meta("hittable_interface")
+		hittable_interface.take_damage(damage)
 
 	if destroy_owner_hit:
 		owner.queue_free()
