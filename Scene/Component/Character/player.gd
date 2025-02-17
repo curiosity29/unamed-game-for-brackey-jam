@@ -23,18 +23,26 @@ func _input(event: InputEvent) -> void:
 	var mouse_pos = get_global_mouse_position()
 	if event.is_action_pressed("right_click"):
 		is_moving = true
+
 	elif event.is_action_released("right_click"):
 		is_moving = false
+
+	
+
 
 	if event.is_action_pressed("click"):
 		cast_skill(mouse_pos)
 
 	## pretty scuff, for fast testing
-	if event.is_action_pressed("skill_1"):
+
+	
+
+	if event.is_action_pressed("1"):
 		current_skill = skills[keybind_to_skill["1"]]["func"]
-	elif event.is_action_pressed("skill_2"):
+	elif event.is_action_pressed("2"):
 		current_skill = skills[keybind_to_skill["2"]]["func"]
-	elif event.is_action_pressed("skill_3"):
+	elif event.is_action_pressed("3"):
+
 		current_skill = skills[keybind_to_skill["3"]]["func"]
 	elif event.is_action_pressed("4"):
 		current_skill = skills[keybind_to_skill["4"]]["func"]
@@ -50,11 +58,17 @@ func cast_skill(cast_global_position: Vector2) -> void:
 ## move toward the mouse position if holding right click
 func _process(_delta: float) -> void:
 	# global_position = move_toward(global_position, get_global_mouse_position(), delta * move_speed)
+
 	if is_moving:
 		direction = (get_global_mouse_position() - global_position).normalized()
 		velocity = direction * move_speed
 		move_and_slide()
 		update_animation(direction)
+
+
+	
+
+
 
 func update_animation(direction: Vector2) -> void:
 	if direction == Vector2.ZERO:
@@ -70,7 +84,7 @@ func update_animation(direction: Vector2) -> void:
 				anim_sprite.play("walk_down")
 			else:
 				anim_sprite.play("walk_up")	
-	await get_tree().create_timer(0.3).timeout
+	#await get_tree().create_timer(0.3).timeout
 
 	
 #region skill
@@ -78,10 +92,15 @@ func update_animation(direction: Vector2) -> void:
 ## create an earth ball and shoot it in the aimed direction
 func skill_earth(cast_global_position: Vector2) -> void:
 	var fire_direction = (cast_global_position - global_position).normalized()
+
 	var earth_ball: Projectile = Database.game_object_scenes["earth_ball"].instantiate()
 	Instance.map.add_child(earth_ball)
 	earth_ball.global_position = global_position - earth_ball.size/2
 	earth_ball.fire_self(fire_direction)
+
+	# var earth_ball = 
+	# earth_ball.fire_self(get_global_mouse_position() - global_position)
+
 	pass
 
 ## do nothing, for when no skill is selected
