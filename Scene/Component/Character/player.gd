@@ -8,11 +8,14 @@ var is_moving: bool = false
 var current_skill: Callable
 
 var hittable_interface: HittableInterface
+var direction: Vector2
 
+var anim_sprite: AnimatedSprite2D
 @export var health: int = 100
 
 func _ready() -> void:
 	Instance.player = self
+	anim_sprite = $AnimatedSprite2D
 	
 	hittable_interface = HittableInterface.new(health, self)
 
@@ -48,12 +51,28 @@ func cast_skill(cast_global_position: Vector2) -> void:
 func _process(_delta: float) -> void:
 	# global_position = move_toward(global_position, get_global_mouse_position(), delta * move_speed)
 	if is_moving:
-		velocity = move_speed * (get_global_mouse_position() - global_position).normalized()
-		
+		direction = (get_global_mouse_position() - global_position).normalized()
+		velocity = direction * move_speed
 		move_and_slide()
+		update_animation(direction)
 
+func update_animation(direction: Vector2) -> void:
+	if direction == Vector2.ZERO:
+		anim_sprite.play("idle_down")
+	else:
+		if abs(direction.x) > abs(direction.y):
+			if direction.x > 0:
+				anim_sprite.play("walk_right")
+			else:
+				anim_sprite.play("walk_left")
+		else:
+			if direction.y > 0:
+				anim_sprite.play("walk_down")
+			else:
+				anim_sprite.play("walk_up")	
+	await get_tree().create_timer(0.3).timeout
 
-
+	
 #region skill
 
 ## create an earth ball and shoot it in the aimed direction
