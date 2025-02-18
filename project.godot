@@ -37,6 +37,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/signal_lens/plugin.cfg")
 
+[global_group]
+
+enemy=""
+
 [input]
 
 click={

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3eadeqakuxuk" path="res://Scene/Base/enemy.gd" id="1_ptqdt"]
 [ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_qthqu"]
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 64
 collision_mask = 64
 script = ExtResource("1_ptqdt")
