@@ -1,10 +1,20 @@
 class_name HittableInterface
 extends Object
 
-var health = 100
+var health = 100:
+	set(value):
+		health = value
+		if health <= 0 and not is_dead:
+			is_dead = true
+			if do_queue_free_owner_on_death:
+				owner.queue_free()
+				call_deferred("free")
+				
 var max_health = 100
-var owner: Node
+var owner: CharacterBody2D
 
+var do_queue_free_owner_on_death: bool = true
+var is_dead: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _init(init_max_health: int, init_owner: Node) -> void:
@@ -16,3 +26,4 @@ func _init(init_max_health: int, init_owner: Node) -> void:
 	
 func take_damage(damage: int, _source: Node = null) -> void:
 	health -= damage
+	VisualHelper.show_damage_indicator(str(damage), owner.global_position)

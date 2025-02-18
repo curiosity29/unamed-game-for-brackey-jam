@@ -22,6 +22,8 @@ Database="*res://Global/Database.gd"
 Event="*res://Global/Event.gd"
 Instance="*res://Global/Instance.gd"
 SoundPlayer="*res://Global/SoundPlayer.gd"
+SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
+VisualHelper="*res://Global/VisualHelper.gd"
 
 [display]
 
@@ -30,6 +32,10 @@ window/size/viewport_height=1080
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/signal_lens/plugin.cfg")
 
 [input]
 
@@ -61,4 +67,6 @@ skill_3={
 
 [layer_names]
 
+2d_physics/layer_3="enemy"
+2d_physics/layer_7="enemy_hitbox"
 2d_physics/layer_8="player"

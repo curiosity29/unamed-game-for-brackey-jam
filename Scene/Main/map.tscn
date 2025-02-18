@@ -46,6 +46,38 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_mc7t2")
 
+[node name="ColorRect" type="ColorRect" parent="GridContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.30795, 0.223999, 0.155878, 0.545098)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer2"]
+layout_mode = 2
+text = "2: wind"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_mc7t2")
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/VBoxContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4081, 0.52483, 0.459907, 0.545098)
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_mc7t2")
@@ -71,13 +103,56 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="JohnGodot" parent="Containers/EnemyContainer" instance=ExtResource("4_f7grq")]
-position = Vector2(785, 224)
+position = Vector2(344, 317)
+collision_mask = 0
 
 [node name="JohnGodot2" parent="Containers/EnemyContainer" instance=ExtResource("4_f7grq")]
-position = Vector2(-134, 473)
+position = Vector2(182, 569)
+collision_mask = 0
 
 [node name="JohnGodot3" parent="Containers/EnemyContainer" instance=ExtResource("4_f7grq")]
-position = Vector2(318, 685)
+position = Vector2(192, 108)
+collision_mask = 0
 
 [node name="JohnGodot4" parent="Containers/EnemyContainer" instance=ExtResource("4_f7grq")]
-position = Vector2(-1, 36)
+position = Vector2(242, 865)
+collision_mask = 0
+
+[node name="SpawnTimer" type="Timer" parent="Containers"]
+autostart = true
+
+[node name="Spawner" type="Control" parent="Containers"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Containers/Spawner"]
+anchors_preset = 0
+offset_left = -225.0
+offset_top = -266.0
+offset_right = 2076.0
+offset_bottom = -103.0
+
+[node name="Control2" type="Control" parent="Containers/Spawner"]
+anchors_preset = 0
+offset_left = -50.0
+offset_top = 1192.0
+offset_right = 2070.0
+offset_bottom = 1355.0
+
+[node name="Control3" type="Control" parent="Containers/Spawner"]
+anchors_preset = 0
+offset_left = -272.0
+offset_top = -179.0
+offset_right = -100.0
+offset_bottom = 1280.0
+
+[node name="Control4" type="Control" parent="Containers/Spawner"]
+anchors_preset = 0
+offset_left = 2030.0
+offset_top = -156.0
+offset_right = 2202.0
+offset_bottom = 1303.0
+
+[connection signal="timeout" from="Containers/SpawnTimer" to="." method="_on_spawn_timer_timeout"]

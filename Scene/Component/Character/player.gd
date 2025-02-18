@@ -37,17 +37,17 @@ func _input(event: InputEvent) -> void:
 
 	
 
-	if event.is_action_pressed("1"):
+	if event.is_action_pressed("skill_1"):
 		current_skill = skills[keybind_to_skill["1"]]["func"]
-	elif event.is_action_pressed("2"):
+	elif event.is_action_pressed("skill_2"):
 		current_skill = skills[keybind_to_skill["2"]]["func"]
-	elif event.is_action_pressed("3"):
+	elif event.is_action_pressed("skill_3"):
 
 		current_skill = skills[keybind_to_skill["3"]]["func"]
-	elif event.is_action_pressed("4"):
-		current_skill = skills[keybind_to_skill["4"]]["func"]
-	elif event.is_action_pressed("5"):
-		current_skill = skills[keybind_to_skill["5"]]["func"]
+	#elif event.is_action_pressed("4"):
+		#current_skill = skills[keybind_to_skill["4"]]["func"]
+	#elif event.is_action_pressed("5"):
+		#current_skill = skills[keybind_to_skill["5"]]["func"]
 
 
 func cast_skill(cast_global_position: Vector2) -> void:

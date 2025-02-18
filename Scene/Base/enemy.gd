@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
-@export var move_speed = 200.0
+@export var move_speed = 50.0
 var hittable_interface: HittableInterface
 
 @export var health: int = 20

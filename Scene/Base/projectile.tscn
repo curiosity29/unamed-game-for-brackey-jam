@@ -13,5 +13,8 @@ grow_vertical = 2
 script = ExtResource("1_hqonh")
 
 [node name="DamageArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
 script = ExtResource("1_1i153")
+destroy_owner_on_hit = true
 metadata/_custom_type_script = ExtResource("1_1i153")
