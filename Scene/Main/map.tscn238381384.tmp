@@ -11,6 +11,7 @@
 vertices = PackedVector2Array(2152.08, -137.477, 2255.57, 1416.64, -322, 1403.32, -322, -157.469)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-386, -222, 2212, -201, 2324, 1481, -386, 1467)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 64.0
 
 [node name="Map" type="Control"]
@@ -27,28 +28,33 @@ metadata/_edit_lock_ = true
 position = Vector2(951, 553)
 script = ExtResource("2_gtw2m")
 
-[node name="GridContainer" type="GridContainer" parent="Camera2D"]
-offset_left = -480.0
-offset_top = 339.0
-offset_right = 509.0
-offset_bottom = 494.0
+[node name="Player" parent="." instance=ExtResource("1_x04w0")]
+position = Vector2(271, 579)
+health = null
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 892.0
+offset_right = 1460.0
+offset_bottom = 1047.0
 columns = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Camera2D/GridContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "1: earth"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_mc7t2")
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/GridContainer/VBoxContainer/TextureRect"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/VBoxContainer/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,21 +63,21 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.30795, 0.223999, 0.155878, 0.545098)
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D/GridContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Camera2D/GridContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer2"]
 layout_mode = 2
 text = "2: wind"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_mc7t2")
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/GridContainer/VBoxContainer2/TextureRect"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/VBoxContainer2/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,9 +85,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4081, 0.52483, 0.459907, 0.545098)
-
-[node name="Player" parent="." instance=ExtResource("1_x04w0")]
-position = Vector2(271, 579)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false

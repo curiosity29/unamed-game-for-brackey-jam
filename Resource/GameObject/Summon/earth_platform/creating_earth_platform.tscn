@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c53m06ipc51xg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gw7x"]
+size = Vector2(249.333, 21)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rjc81"]
+
+[node name="creating_earth_platform" type="Node2D"]
+scale = Vector2(2, 0.3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(121, 18.5)
+shape = SubResource("RectangleShape2D_0gw7x")
+debug_color = Color(0, 0.6, 0.701961, 0.0392157)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(119.25, 11.75)
+scale = Vector2(239.5, 24.5)
+mesh = SubResource("BoxMesh_rjc81")
