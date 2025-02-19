@@ -1,10 +1,12 @@
 class_name Player
 extends CharacterBody2D
 
-var move_speed = 500
-
+var move_speed: float = 800
+var acceleration_mult: float = 10.
+var friction_mult: float = 5.
+var jump_velocity: int = -2000
 var is_moving: bool = false
-
+var gravity_mult: float = 10.
 var current_skill: Callable
 
 var hittable_interface: HittableInterface
@@ -32,6 +34,10 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("click"):
 		cast_skill(mouse_pos)
+	
+	if event.is_action_pressed("jump"):
+		if is_on_floor():
+			velocity.y = jump_velocity
 
 	## pretty scuff, for fast testing
 
@@ -56,15 +62,24 @@ func cast_skill(cast_global_position: Vector2) -> void:
 	current_skill = skill_null
 
 ## move toward the mouse position if holding right click
-func _process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# global_position = move_toward(global_position, get_global_mouse_position(), delta * move_speed)
-
-	if is_moving:
-		direction = (get_global_mouse_position() - global_position).normalized()
-		velocity = direction * move_speed
-		move_and_slide()
-		update_animation(direction)
-
+	if not is_on_floor():
+		velocity += get_gravity() * delta * gravity_mult
+		
+	var direction_value = Input.get_axis("left", "right")
+	if direction_value:
+		#var direction = Vector2.LEFT * direction_value
+		velocity.x = move_toward(velocity.x, move_speed * sign(direction_value), move_speed * delta * acceleration_mult)
+		
+	else:
+		var brake = move_speed * delta * friction_mult
+		velocity.x = move_toward(velocity.x, 0, brake)
+	#if is_moving:
+		#direction = (get_global_mouse_position() - global_position).normalized()
+		#velocity = direction * move_speed
+	move_and_slide()
+	update_animation(direction)
 
 	
 
