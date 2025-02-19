@@ -41,9 +41,12 @@ func _input(event: InputEvent) -> void:
 
 	## pretty scuff, for fast testing
 
-	
+	if Input.is_action_pressed("skill_1") and Input.is_action_pressed("q"):
+		print("creat earth platform") 
+		current_skill = skills[keybind_to_skill["9"]]["func"]
 
-	if event.is_action_pressed("skill_1"):
+	elif event.is_action_pressed("skill_1") :
+		
 		current_skill = skills[keybind_to_skill["1"]]["func"]
 	elif event.is_action_pressed("skill_2"):
 		current_skill = skills[keybind_to_skill["2"]]["func"]
@@ -124,7 +127,18 @@ func skill_earth(cast_global_position: Vector2) -> void:
 	# var earth_ball = 
 	# earth_ball.fire_self(get_global_mouse_position() - global_position)
 
+
 	pass
+func skill_earth_platform(cast_global_position: Vector2) -> void:
+	var earth_platform: Projectile = Database.game_object_scenes["earth_platform"].instantiate()
+	#Instance.map.add_child(earth_platform)      these 2 lines ajk is 1+q will suspend and will eliminate everything!!!I have no idea why it's wrong but I'm going to fix it if you know how to do it?
+
+
+
+
+	#earth_platform.global_position = global_position
+	
+	
 
 ## do nothing, for when no skill is selected
 func skill_null(_cast_global_position: Vector2) -> void:
@@ -210,7 +224,13 @@ var skills: Dictionary[String, Dictionary] = {
 		"name": "arcana",
 		"cd": 1.0,
 		"func": skill_arcana,
-		"keybind": "8"
+		"keybind": "8",
+	},
+	"earth_platform": {
+		"name": "earth_platform",
+		"cd": 1.0,
+		"func": skill_earth_platform,
+		"keybind": "9"
 	}
 	
 }
@@ -224,7 +244,8 @@ var keybind_to_skill: Dictionary[String, String] = {
 	"5": "water",
 	"6": "fire",
 	"7": "laight",
-	"8": "arcana"
+	"8": "arcana",
+	"9": "earth_platform"
 }
 
 #endregion

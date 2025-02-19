@@ -1,21 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://c53m06ipc51xg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gw7x"]
-size = Vector2(249.333, 21)
+[ext_resource type="Script" path="res://Resource/GameObject/Summon/earth_platform/creating_earth_platform.gd" id="1_fi100"]
+[ext_resource type="PackedScene" uid="uid://bur5iuqgx0xkc" path="res://Scene/platform_envaronment/platforms/platform_standard.tscn" id="1_gjaym"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_rjc81"]
+[node name="creating_earth_platform" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fi100")
 
-[node name="creating_earth_platform" type="Node2D"]
-scale = Vector2(2, 0.3)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(121, 18.5)
-shape = SubResource("RectangleShape2D_0gw7x")
-debug_color = Color(0, 0.6, 0.701961, 0.0392157)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-position = Vector2(119.25, 11.75)
-scale = Vector2(239.5, 24.5)
-mesh = SubResource("BoxMesh_rjc81")
+[node name="platform_standard" parent="." instance=ExtResource("1_gjaym")]
+scale = Vector2(2, 0.5)
