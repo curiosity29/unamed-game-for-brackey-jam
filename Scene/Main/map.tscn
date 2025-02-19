@@ -27,58 +27,198 @@ metadata/_edit_lock_ = true
 position = Vector2(951, 553)
 script = ExtResource("2_gtw2m")
 
-[node name="GridContainer" type="GridContainer" parent="Camera2D"]
-offset_left = -480.0
-offset_top = 339.0
-offset_right = 509.0
-offset_bottom = 494.0
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="GridContainer" type="GridContainer" parent="Camera2D/CanvasLayer"]
+offset_left = 471.0
+offset_top = 892.0
+offset_right = 1523.0
+offset_bottom = 1047.0
 columns = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Camera2D/GridContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer"]
 layout_mode = 2
 text = "1: earth"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_mc7t2")
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/GridContainer/VBoxContainer/TextureRect"]
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.30795, 0.223999, 0.155878, 0.545098)
+color = Color(0.329412, 0.243137, 0.168627, 0.807843)
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D/GridContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Camera2D/GridContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer2"]
 layout_mode = 2
 text = "2: wind"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/GridContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_mc7t2")
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/GridContainer/VBoxContainer2/TextureRect"]
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer2/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4081, 0.52483, 0.459907, 0.545098)
+color = Color(0.298039, 0.298039, 0.298039, 0.792157)
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+text = "3: ice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_mc7t2")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer3/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.174378, 0.780699, 0.944802, 0.545098)
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+text = "4: electric"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_mc7t2")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer4/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.908575, 0.892784, 0.215294, 0.545098)
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer5"]
+layout_mode = 2
+text = "5: water"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_mc7t2")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer5/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0427863, 0.403856, 0.681905, 0.545098)
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer6"]
+layout_mode = 2
+text = "6: fire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_mc7t2")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer6/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.823133, 0.28138, 0.240094, 0.666667)
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer7"]
+layout_mode = 2
+text = "7: laight"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer7"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_mc7t2")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer7/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933676, 0.959493, 0.944226, 0.545098)
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="Camera2D/CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer8"]
+layout_mode = 2
+text = "8: arcana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer8"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_mc7t2")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer/GridContainer/VBoxContainer8/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.661065, 0.239304, 0.911663, 0.545098)
 
 [node name="Player" parent="." instance=ExtResource("1_x04w0")]
 position = Vector2(271, 579)

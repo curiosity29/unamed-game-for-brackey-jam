@@ -54,6 +54,14 @@ func _input(event: InputEvent) -> void:
 		#current_skill = skills[keybind_to_skill["4"]]["func"]
 	#elif event.is_action_pressed("5"):
 		#current_skill = skills[keybind_to_skill["5"]]["func"]
+	#elif event.is_action_pressed("6"):
+		#current_skill = skills[keybind_to_skill["6"]]["func"]
+	#elif event.is_action_pressed("7"):
+		#current_skill = skills[keybind_to_skill["7"]]["func"]
+	#elif event.is_action_pressed("7"):
+		#current_skill = skills[keybind_to_skill["8"]]["func"]
+
+
 
 
 func cast_skill(cast_global_position: Vector2) -> void:
@@ -121,7 +129,10 @@ func skill_earth(cast_global_position: Vector2) -> void:
 ## do nothing, for when no skill is selected
 func skill_null(_cast_global_position: Vector2) -> void:
 	pass
-
+func skill_wind(cast_global_position: Vector2) -> void:
+	# 
+	pass
+	skill_earth(cast_global_position)
 
 func skill_fire(cast_global_position: Vector2) -> void:
 	# 
@@ -143,6 +154,14 @@ func skill_water(cast_global_position: Vector2) -> void:
 	# 
 	pass
 	skill_earth(cast_global_position)
+func skill_laight(cast_global_position: Vector2) -> void:
+	# 
+	pass
+	skill_earth(cast_global_position)
+func skill_arcana(cast_global_position: Vector2) -> void:
+	# 
+	pass
+	skill_earth(cast_global_position)
 
 var skills: Dictionary[String, Dictionary] = {
 	"earth": {
@@ -151,10 +170,10 @@ var skills: Dictionary[String, Dictionary] = {
 		"func": skill_earth,
 		"keybind": "1"
 	},
-	"fire": {
-		"name": "fire",
+	"wind": {
+		"name": "wind",
 		"cd": 1.0,
-		"func": skill_fire,
+		"func": skill_wind,
 		"keybind": "2"
 	},
 	"ice": {
@@ -174,16 +193,38 @@ var skills: Dictionary[String, Dictionary] = {
 		"cd": 1.0,
 		"func": skill_water,
 		"keybind": "5"
+	},
+	"fire": {
+		"name": "fire",
+		"cd": 1.0,
+		"func": skill_fire,
+		"keybind": "6"
+	},
+	"laight": {
+		"name": "laight",
+		"cd": 1.0,
+		"func": skill_laight,
+		"keybind": "7"
+	},
+	"arcana": {
+		"name": "arcana",
+		"cd": 1.0,
+		"func": skill_arcana,
+		"keybind": "8"
 	}
+	
 }
 
 ## pretty scuff, for fast testing
 var keybind_to_skill: Dictionary[String, String] = {
 	"1": "earth",
-	"2": "fire",
+	"2": "wind",
 	"3": "ice",
 	"4": "electric",
-	"5": "water"
+	"5": "water",
+	"6": "fire",
+	"7": "laight",
+	"8": "arcana"
 }
 
 #endregion
