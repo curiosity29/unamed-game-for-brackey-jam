@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://cou4t485js4il"]
+[gd_scene load_steps=119 format=3 uid="uid://bjwc3vytvhb47"]
 
 [ext_resource type="Script" uid="uid://boy0sqjw8sbwv" path="res://Scene/Component/Character/player.gd" id="1_rum4r"]
 [ext_resource type="Texture2D" uid="uid://bbiujumwu3dcu" path="res://CHarakter/D_Attack.png" id="2_4v7ms"]

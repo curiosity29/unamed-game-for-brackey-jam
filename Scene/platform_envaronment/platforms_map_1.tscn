@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvvjavkmcd8d1"]
+[gd_scene load_steps=2 format=3 uid="uid://besuaa660vpjh"]
 
 [ext_resource type="PackedScene" uid="uid://bur5iuqgx0xkc" path="res://Scene/platform_envaronment/platforms/platform_standard.tscn" id="1_hx8pu"]
 
@@ -31,3 +31,15 @@ position = Vector2(4660, -125)
 
 [node name="platform_standard8" parent="platforms" instance=ExtResource("1_hx8pu")]
 position = Vector2(5365, 10)
+
+[node name="platform_standard9" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(6159, 192)
+
+[node name="platform_standard10" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(6832, 373)
+
+[node name="platform_standard11" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(7625, 178)
+
+[node name="platform_standard12" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(8285, 64)
