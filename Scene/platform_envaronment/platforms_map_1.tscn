@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvvjavkmcd8d1"]
+
+[ext_resource type="PackedScene" uid="uid://bur5iuqgx0xkc" path="res://Scene/platform_envaronment/platforms/platform_standard.tscn" id="1_hx8pu"]
+
+[node name="platforms_map_1" type="Node2D"]
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="platform_standard" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(20400, 75)
+scale = Vector2(1, 1)
+
+[node name="platform_standard2" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(65, -17)
+scale = Vector2(5, 1)
+
+[node name="platform_standard3" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(1313, -201)
+
+[node name="platform_standard4" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(2123, -289)
+
+[node name="platform_standard5" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(2963, -166)
+
+[node name="platform_standard6" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(3825, 20)
+
+[node name="platform_standard7" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(4660, -125)
+
+[node name="platform_standard8" parent="platforms" instance=ExtResource("1_hx8pu")]
+position = Vector2(5365, 10)

@@ -1,18 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfooqy6jls305"]
+[gd_scene load_steps=8 format=3 uid="uid://dfooqy6jls305"]
 
 [ext_resource type="Script" uid="uid://cbi8tx5rbi704" path="res://Scene/Main/map.gd" id="1_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://cou4t485js4il" path="res://Scene/Component/Character/player.tscn" id="1_x04w0"]
+[ext_resource type="Script" uid="uid://b1fq2hnaco8lk" path="res://Scene/Main/move_with_player.gd" id="2_gtw2m"]
 [ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="2_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://x25myfkfkv66" path="res://Resource/GameObject/Enemy/JohnGodot/john_godot.tscn" id="4_f7grq"]
+[ext_resource type="PackedScene" uid="uid://cvvjavkmcd8d1" path="res://Scene/platform_envaronment/platforms_map_1.tscn" id="5_atpxl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mc7t2"]
 vertices = PackedVector2Array(2152.08, -137.477, 2255.57, 1416.64, -322, 1403.32, -322, -157.469)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-386, -222, 2212, -201, 2324, 1481, -386, 1467)])
 agent_radius = 64.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7grq"]
-size = Vector2(2046, 76)
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -24,8 +23,12 @@ grow_vertical = 2
 script = ExtResource("1_mc7t2")
 metadata/_edit_lock_ = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(951, 553)
+script = ExtResource("2_gtw2m")
+
 [node name="Player" parent="." instance=ExtResource("1_x04w0")]
-position = Vector2(1336, 541)
+position = Vector2(271, 579)
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
@@ -100,11 +103,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Containers/Obstacles"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Containers/Obstacles/StaticBody2D"]
-position = Vector2(955, 787)
-shape = SubResource("RectangleShape2D_f7grq")
+[node name="platforms_map_1" parent="Containers/Obstacles" instance=ExtResource("5_atpxl")]
+position = Vector2(16, 689)
 
 [node name="EnemyContainer" type="Control" parent="Containers"]
 layout_mode = 1
