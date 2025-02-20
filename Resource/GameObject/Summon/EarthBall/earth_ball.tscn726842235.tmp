@@ -2,17 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_33el4"]
 [ext_resource type="PackedScene" uid="uid://lxyb6nw1e8y7" path="res://Scene/Base/projectile.tscn" id="1_a0qwp"]
-[ext_resource type="Script" uid="uid://bpw5snn83lejd" path="res://Resource/GameObject/Summon/FireBall/fire_ball.gd" id="2_21f12"]
+[ext_resource type="Script" uid="uid://dk57ynxnhqqv0" path="res://Resource/GameObject/Summon/EarthBall/earth_ball.gd" id="2_7j4xg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j4xg"]
 size = Vector2(64, 64)
 
-[node name="FireBall" instance=ExtResource("1_a0qwp")]
+[node name="EarthBall" instance=ExtResource("1_a0qwp")]
 custom_minimum_size = Vector2(64, 64)
 offset_right = -1856.0
 offset_bottom = -1016.0
-script = ExtResource("2_21f12")
-damage = 10
+script = ExtResource("2_7j4xg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D" index="0"]
 position = Vector2(32, 32)
@@ -27,10 +26,3 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_33el4")
 expand_mode = 1
-
-[node name="EffectArea" type="Area2D" parent="." index="2"]
-unique_name_in_owner = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea" index="0"]
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_7j4xg")

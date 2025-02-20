@@ -126,7 +126,7 @@ func skill_earth(cast_global_position: Vector2) -> void:
 	Instance.map.add_child(earth_ball)
 	earth_ball.global_position = global_position - earth_ball.size/2
 	earth_ball.fire_self(fire_direction)
-
+	pass
 	# var earth_ball = 
 	# earth_ball.fire_self(get_global_mouse_position() - global_position)
 
