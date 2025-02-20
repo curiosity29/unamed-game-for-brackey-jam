@@ -144,10 +144,13 @@ func skill_earth_platform(cast_global_position: Vector2) -> void:
 func skill_null(_cast_global_position: Vector2) -> void:
 	pass
 func skill_wind(cast_global_position: Vector2) -> void:
-	# 
-	pass
-	skill_earth(cast_global_position)
-
+	
+	var wind_cone = Database.game_object_scenes["wind_cone"].instantiate()
+	var cast_direction: Vector2 = (cast_global_position - global_position).normalized()
+	wind_cone.direction = cast_direction
+	
+	Instance.map.add_child(wind_cone)
+	wind_cone.global_position = global_position
 
 # open monitoring for circle area
 # check then deal damge for enemy inside
