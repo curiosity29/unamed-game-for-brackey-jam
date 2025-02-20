@@ -26,37 +26,53 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_fve2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ukwee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4j026")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eowp8")
+}],
+"loop": false,
+"name": &"default_1",
+"speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j4xg"]
-size = Vector2(64, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_icqhv"]
+radius = 21.9747
 
 [node name="water_attack" instance=ExtResource("1_1r0qy")]
 custom_minimum_size = Vector2(64, 64)
-offset_left = 8.0
-offset_top = -4.0
-offset_right = -1848.0
-offset_bottom = -1020.0
-scale = Vector2(1, 0.359999)
+offset_left = -17.0
+offset_top = -11.0
+offset_right = -1873.0
+offset_bottom = -1027.0
+scale = Vector2(1.10789, 0.482516)
 script = ExtResource("2_e5ygl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+modulate = Color(1, 1, 1, 0.972549)
+self_modulate = Color(1, 1, 1, 0.996078)
 position = Vector2(235, 19)
 scale = Vector2(0.29469, 0.199942)
 sprite_frames = SubResource("SpriteFrames_qtf67")
 autoplay = "default"
-frame_progress = 0.447322
+frame_progress = 0.165665
 script = ExtResource("3_e5ygl")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." index="1"]
-visible = false
-position = Vector2(243, 19)
-scale = Vector2(0.29469, 0.199942)
-sprite_frames = SubResource("SpriteFrames_qtf67")
-autoplay = "default"
-frame_progress = 0.679289
-script = ExtResource("3_e5ygl")
+[node name="DamageArea2D" parent="." index="1"]
+position = Vector2(-0.962094, 3.53961)
+damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D" index="0"]
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_7j4xg")
+visible = false
+position = Vector2(152.011, 21.2377)
+shape = SubResource("CircleShape2D_icqhv")
+debug_color = Color(0, 0.6, 0.701961, 0)

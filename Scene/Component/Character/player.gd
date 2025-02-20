@@ -190,7 +190,7 @@ func skill_water(cast_global_position: Vector2) -> void:
 	var fire_direction = (cast_global_position - global_position).normalized()
 	var attack_water: Projectile = Database.game_object_scenes["attack_water"].instantiate()
 	Instance.map.add_child(attack_water)
-	attack_water.global_position = global_position
+	attack_water.global_position = global_position + Vector2(-220,-50)
 	attack_water.fire_self(fire_direction)
 
 	pass
