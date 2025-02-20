@@ -58,8 +58,8 @@ func _input(event: InputEvent) -> void:
 		current_skill = skills[keybind_to_skill["3"]]["func"]
 	elif event.is_action_pressed("skill_4"):
 		current_skill = skills[keybind_to_skill["4"]]["func"]
-	#elif event.is_action_pressed("5"):
-		#current_skill = skills[keybind_to_skill["5"]]["func"]
+	elif event.is_action_pressed("skill_5"):
+		current_skill = skills[keybind_to_skill["5"]]["func"]
 	elif event.is_action_pressed("skill_6"):
 		current_skill = skills[keybind_to_skill["6"]]["func"]
 	#elif event.is_action_pressed("7"):
