@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://dkmo6fhnywc5e"]
+
+[ext_resource type="Shader" uid="uid://cc5bejb3khxyw" path="res://Resource/Shader/script/lightning_ball.gdshader" id="1_vmmbi"]
+
+[sub_resource type="Gradient" id="Gradient_vmmbi"]
+colors = PackedColorArray(0, 0, 0, 1, 0.486275, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jlqo0"]
+seed = 3
+frequency = 0.0055
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8ahyx"]
+color_ramp = SubResource("Gradient_vmmbi")
+noise = SubResource("FastNoiseLite_jlqo0")
+
+[sub_resource type="Gradient" id="Gradient_s53w3"]
+colors = PackedColorArray(0, 0, 0, 1, 0.682353, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nr4g3"]
+frequency = 0.0116
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3obec"]
+color_ramp = SubResource("Gradient_s53w3")
+noise = SubResource("FastNoiseLite_nr4g3")
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_vmmbi")
+shader_parameter/noise = SubResource("NoiseTexture2D_8ahyx")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_3obec")
+shader_parameter/brightness = 2.5
+shader_parameter/time_scale = 1.555

@@ -798,15 +798,15 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(10, 10)
 collision_layer = 128
 script = ExtResource("1_rum4r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(1.49012e-08, 0.1)
-polygon = PackedVector2Array(-7, -8, -4, -14, 4.9, -11.6, 3.2, -0.2, 2.5, 5.2, -2.2, 3.5, -4.6, 4.3, -6.4, 3, -7, 0, -8.1, -7)
+polygon = PackedVector2Array(-82, -68.1, -42, -98.1, 2, -119.1, 32, -122.1, 39, -67.1, 29, 60.9, -18, 58.9, -61, 50.9, -73, 11.9, -84, -35.1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.2, -0.2)
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4sx3w")
 animation = &"walk_up"

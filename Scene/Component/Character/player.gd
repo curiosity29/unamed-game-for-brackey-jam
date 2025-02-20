@@ -56,8 +56,8 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("skill_3"):
 
 		current_skill = skills[keybind_to_skill["3"]]["func"]
-	#elif event.is_action_pressed("4"):
-		#current_skill = skills[keybind_to_skill["4"]]["func"]
+	elif event.is_action_pressed("skill_4"):
+		current_skill = skills[keybind_to_skill["4"]]["func"]
 	#elif event.is_action_pressed("5"):
 		#current_skill = skills[keybind_to_skill["5"]]["func"]
 	elif event.is_action_pressed("skill_6"):
@@ -82,6 +82,11 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta * gravity_mult
 		
 	var direction_value = Input.get_axis("left", "right")
+	if direction_value < 0:
+		anim_sprite.flip_h = true
+	elif direction_value > 0:
+		anim_sprite.flip_h = false
+		
 	if direction_value:
 		#var direction = Vector2.LEFT * direction_value
 		velocity.x = move_toward(velocity.x, move_speed * sign(direction_value), move_speed * delta * acceleration_mult)
@@ -172,10 +177,15 @@ func skill_ice(cast_global_position: Vector2) -> void:
 	skill_earth(cast_global_position)
 
 
+var holding_electric_ball: Node
 func skill_electric(cast_global_position: Vector2) -> void:
-	# 
-	pass
-	skill_earth(cast_global_position)
+	# electric_ball
+	if not is_instance_valid(holding_electric_ball):
+		holding_electric_ball = Database.game_object_scenes["electric_ball"].instantiate()
+		add_child(holding_electric_ball)
+		holding_electric_ball.position = -holding_electric_ball.size/2
+	else:
+		holding_electric_ball.duration = holding_electric_ball.max_duration
 
 func skill_water(cast_global_position: Vector2) -> void:
 	# 

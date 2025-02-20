@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpjvusnfqqgqk"]
+
+[ext_resource type="Material" uid="uid://dkmo6fhnywc5e" path="res://Resource/Shader/material/lightning_ball.tres" id="1_jool5"]
+[ext_resource type="Script" uid="uid://cp2u48b11jt8x" path="res://Resource/GameObject/Summon/ElectricBall/electric_ball.gd" id="1_p1ldj"]
+
+[node name="ElectricBall" type="Control"]
+custom_minimum_size = Vector2(640, 640)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -440.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p1ldj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("1_jool5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.552941, 1, 1, 1)
+
+[node name="EffectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EffectArea"]
+polygon = PackedVector2Array(178, 489, 107, 336, 157, 177, 266, 118, 384, 115, 494, 165, 534, 299, 529, 423, 472, 481, 316, 527, 308, 453, 431, 413, 470, 318, 423, 220, 322, 185, 233, 221, 184, 302, 205, 410, 303, 457, 310, 527)
+
+[node name="StrikeTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="StrikeTimer" to="." method="_on_strike_timer_timeout"]
