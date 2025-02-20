@@ -60,8 +60,8 @@ func _input(event: InputEvent) -> void:
 		#current_skill = skills[keybind_to_skill["4"]]["func"]
 	#elif event.is_action_pressed("5"):
 		#current_skill = skills[keybind_to_skill["5"]]["func"]
-	#elif event.is_action_pressed("6"):
-		#current_skill = skills[keybind_to_skill["6"]]["func"]
+	elif event.is_action_pressed("skill_6"):
+		current_skill = skills[keybind_to_skill["6"]]["func"]
 	#elif event.is_action_pressed("7"):
 		#current_skill = skills[keybind_to_skill["7"]]["func"]
 	#elif event.is_action_pressed("7"):
@@ -158,11 +158,10 @@ func skill_fire(cast_global_position: Vector2) -> void:
 	## supposed input
 	## fire_ball_scene
 
-	var fire_ball = Database.game_object_scenes["earth_ball"].instantiate()
+	var fire_ball = Database.game_object_scenes["fire_ball"].instantiate()
 	Instance.map.add_child(fire_ball)
 	fire_ball.global_position = cast_global_position - fire_ball.size/2
-
-	fire_ball.execute()
+	
 
 func skill_ice(cast_global_position: Vector2) -> void:
 	# 

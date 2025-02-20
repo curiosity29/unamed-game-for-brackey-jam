@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 @export var move_speed = 50.0
 var hittable_interface: HittableInterface
-@onready var hitbox: Area2D = $Hitbox
+@onready var hitbox: Area2D = %Hitbox
 
 @export var health: int = 20
 var player: Player:

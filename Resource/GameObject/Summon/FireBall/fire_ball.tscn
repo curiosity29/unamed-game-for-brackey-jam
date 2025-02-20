@@ -1,36 +1,135 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0hrjxekhgnba"]
+[gd_scene load_steps=9 format=3 uid="uid://bjmwate7yc2fv"]
 
-[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_33el4"]
-[ext_resource type="PackedScene" uid="uid://lxyb6nw1e8y7" path="res://Scene/Base/projectile.tscn" id="1_a0qwp"]
-[ext_resource type="Script" uid="uid://bpw5snn83lejd" path="res://Resource/GameObject/Summon/FireBall/fire_ball.gd" id="2_21f12"]
+[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_buw3l"]
+[ext_resource type="Script" uid="uid://bpw5snn83lejd" path="res://Resource/GameObject/Summon/FireBall/fire_ball.gd" id="1_etvno"]
+[ext_resource type="Material" uid="uid://64cv1y8j30gs" path="res://Resource/Shader/material/fire_ball.tres" id="2_21f12"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j4xg"]
-size = Vector2(64, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1a1y"]
+radius = 128.0
 
-[node name="FireBall" instance=ExtResource("1_a0qwp")]
+[sub_resource type="Animation" id="Animation_21f12"]
+resource_name = "burn"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+
+[sub_resource type="Animation" id="Animation_u3c8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/frame_scope")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.465]
+}
+
+[sub_resource type="Animation" id="Animation_gu31s"]
+resource_name = "grow_shrink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/frame_scope")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.55, 1),
+"transitions": PackedFloat32Array(1.31951, 0.153893, 0.615572, 0.933033),
+"update": 0,
+"values": [9.669, 1.388, 1.388, 9.669]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/time")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gu31s"]
+_data = {
+&"RESET": SubResource("Animation_u3c8t"),
+&"burn": SubResource("Animation_21f12"),
+&"grow_shrink": SubResource("Animation_gu31s")
+}
+
+[node name="FireBall" type="Control"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1664.0
+offset_bottom = -824.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_etvno")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("2_21f12")
 custom_minimum_size = Vector2(64, 64)
-offset_right = -1856.0
-offset_bottom = -1016.0
-script = ExtResource("2_21f12")
-damage = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D" index="0"]
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_7j4xg")
-
-[node name="TextureRect" type="TextureRect" parent="." index="1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_33el4")
+texture = ExtResource("1_buw3l")
 expand_mode = 1
 
-[node name="EffectArea" type="Area2D" parent="." index="2"]
-unique_name_in_owner = true
+[node name="EffectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea" index="0"]
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_7j4xg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
+position = Vector2(128, 128)
+shape = SubResource("CircleShape2D_n1a1y")
+
+[node name="BurnTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gu31s")
+}
+autoplay = "grow_shrink"
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="BurnTimer" to="." method="_on_burn_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
