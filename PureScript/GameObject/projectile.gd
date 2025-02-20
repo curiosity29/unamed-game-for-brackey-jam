@@ -18,5 +18,5 @@ func _process(delta: float) -> void:
 
 
 func check_out_of_screen() -> void:
-	if min(global_position.x, global_position.y) <-1000 or max(global_position.x, global_position.y) > get_viewport_rect().size.x + 1000 :
+	if min(global_position.x, global_position.y) <-1000 or max(global_position.x, global_position.y) > 9480 or global_position.y > 1000 :
 		queue_free()

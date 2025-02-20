@@ -9,6 +9,7 @@ var is_moving: bool = false
 var gravity_mult: float = 10.
 var current_skill: Callable
 
+
 var hittable_interface: HittableInterface
 var direction: Vector2
 
@@ -34,15 +35,17 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("click"):
 		cast_skill(mouse_pos)
-	
+		
 	if event.is_action_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_velocity
 
 	## pretty scuff, for fast testing
 
-	if Input.is_action_pressed("skill_1") and Input.is_action_pressed("q"):
-		print("creat earth platform") 
+	if Input.is_action_just_pressed("skill_1") and Input.is_action_pressed("q"):
+		
+
+		#print("creat earth platform") for the test 
 		current_skill = skills[keybind_to_skill["9"]]["func"]
 
 	elif event.is_action_pressed("skill_1") :
@@ -130,13 +133,10 @@ func skill_earth(cast_global_position: Vector2) -> void:
 
 	pass
 func skill_earth_platform(cast_global_position: Vector2) -> void:
+	
 	var earth_platform: Projectile = Database.game_object_scenes["earth_platform"].instantiate()
-	Instance.map.add_child(earth_platform)     # these 2 lines ajk is 1+q will suspend and will eliminate everything!!!I have no idea why it's wrong but I'm going to fix it if you know how to do it?
-
-
-
-
-	earth_platform.global_position = global_position
+	Instance.map.add_child(earth_platform)     
+	earth_platform.global_position = global_position + Vector2(100,50)
 	
 	
 
