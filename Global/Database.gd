@@ -10,4 +10,6 @@ var game_object_scenes: Dictionary[String, PackedScene] = {
 	"fire_ball": load("res://Resource/GameObject/Summon/FireBall/fire_ball.tscn"),
 	"wind_cone": load("res://Resource/GameObject/Summon/WindCone/wind_cone.tscn"),
 	"electric_ball": load("res://Resource/GameObject/Summon/ElectricBall/electric_ball.tscn"),
+	"attack_water": load("res://Resource/GameObject/Summon/water/water_attack/water_attack.tscn")
+	
 }

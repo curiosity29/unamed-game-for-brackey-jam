@@ -155,7 +155,7 @@ func skill_wind(cast_global_position: Vector2) -> void:
 	wind_cone.direction = cast_direction
 	
 	Instance.map.add_child(wind_cone)
-	wind_cone.global_position = global_position
+	wind_cone.global_position = global_position 
 
 # open monitoring for circle area
 # check then deal damge for enemy inside
@@ -172,9 +172,8 @@ func skill_fire(cast_global_position: Vector2) -> void:
 	
 
 func skill_ice(cast_global_position: Vector2) -> void:
-	# 
+	
 	pass
-	skill_earth(cast_global_position)
 
 
 var holding_electric_ball: Node
@@ -188,9 +187,15 @@ func skill_electric(cast_global_position: Vector2) -> void:
 		holding_electric_ball.duration = holding_electric_ball.max_duration
 
 func skill_water(cast_global_position: Vector2) -> void:
-	# 
+	var fire_direction = (cast_global_position - global_position).normalized()
+	var attack_water: Projectile = Database.game_object_scenes["attack_water"].instantiate()
+	Instance.map.add_child(attack_water)
+	attack_water.global_position = global_position
+	attack_water.fire_self(fire_direction)
+
 	pass
-	skill_earth(cast_global_position)
+
+	
 func skill_laight(cast_global_position: Vector2) -> void:
 	# 
 	pass
