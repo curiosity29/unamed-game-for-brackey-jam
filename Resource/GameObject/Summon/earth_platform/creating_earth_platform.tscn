@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c53m06ipc51xg"]
 
-[ext_resource type="Script" path="res://Resource/GameObject/Summon/earth_platform/creating_earth_platform.gd" id="1_fi100"]
+[ext_resource type="Script" uid="uid://k8tenlj0arhg" path="res://Resource/GameObject/Summon/earth_platform/creating_earth_platform.gd" id="1_fi100"]
 [ext_resource type="PackedScene" uid="uid://bur5iuqgx0xkc" path="res://Scene/platform_envaronment/platforms/platform_standard.tscn" id="1_gjaym"]
 
 [node name="creating_earth_platform" type="Control"]

@@ -131,12 +131,12 @@ func skill_earth(cast_global_position: Vector2) -> void:
 	pass
 func skill_earth_platform(cast_global_position: Vector2) -> void:
 	var earth_platform: Projectile = Database.game_object_scenes["earth_platform"].instantiate()
-	#Instance.map.add_child(earth_platform)      these 2 lines ajk is 1+q will suspend and will eliminate everything!!!I have no idea why it's wrong but I'm going to fix it if you know how to do it?
+	Instance.map.add_child(earth_platform)     # these 2 lines ajk is 1+q will suspend and will eliminate everything!!!I have no idea why it's wrong but I'm going to fix it if you know how to do it?
 
 
 
 
-	#earth_platform.global_position = global_position
+	earth_platform.global_position = global_position
 	
 	
 
