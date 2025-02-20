@@ -148,10 +148,21 @@ func skill_wind(cast_global_position: Vector2) -> void:
 	pass
 	skill_earth(cast_global_position)
 
+
+# open monitoring for circle area
+# check then deal damge for enemy inside
+# 
 func skill_fire(cast_global_position: Vector2) -> void:
 	# 
 	pass
-	skill_earth(cast_global_position)
+	## supposed input
+	## fire_ball_scene
+
+	var fire_ball = Database.game_object_scenes["earth_ball"].instantiate()
+	Instance.map.add_child(fire_ball)
+	fire_ball.global_position = cast_global_position - fire_ball.size/2
+
+	fire_ball.execute()
 
 func skill_ice(cast_global_position: Vector2) -> void:
 	# 

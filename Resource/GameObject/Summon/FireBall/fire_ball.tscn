@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0hrjxekhgnba"]
+
+[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_33el4"]
+[ext_resource type="PackedScene" uid="uid://lxyb6nw1e8y7" path="res://Scene/Base/projectile.tscn" id="1_a0qwp"]
+[ext_resource type="Script" uid="uid://dk57ynxnhqqv0" path="res://Resource/GameObject/Summon/EarthBall/earth_ball.gd" id="2_7j4xg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j4xg"]
+size = Vector2(64, 64)
+
+[node name="EarthBall" instance=ExtResource("1_a0qwp")]
+custom_minimum_size = Vector2(64, 64)
+offset_right = -1856.0
+offset_bottom = -1016.0
+script = ExtResource("2_7j4xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D" index="0"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_7j4xg")
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_33el4")
+expand_mode = 1
