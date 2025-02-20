@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bb3wch7lfv24w"]
+[gd_scene load_steps=8 format=3 uid="uid://dfooqy6jls305"]
 
-[ext_resource type="Script" path="res://Scene/Main/map.gd" id="1_mc7t2"]
-[ext_resource type="PackedScene" uid="uid://bjwc3vytvhb47" path="res://Scene/Component/Character/player.tscn" id="1_x04w0"]
+[ext_resource type="Script" uid="uid://cbi8tx5rbi704" path="res://Scene/Main/map.gd" id="1_mc7t2"]
+[ext_resource type="PackedScene" uid="uid://cou4t485js4il" path="res://Scene/Component/Character/player.tscn" id="1_x04w0"]
 [ext_resource type="Script" path="res://Scene/Main/move_with_player.gd" id="2_gtw2m"]
 [ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="2_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://x25myfkfkv66" path="res://Resource/GameObject/Enemy/JohnGodot/john_godot.tscn" id="4_f7grq"]
