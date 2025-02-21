@@ -166,9 +166,7 @@ collision_layer = 64
 collision_mask = 64
 script = ExtResource("1_mi2kh")
 animated = NodePath("AnimatedSprite2D")
-acceleration_mult = null
 move_speed = 100.0
-health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h23tt")
@@ -185,7 +183,7 @@ polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85
 
 [node name="DamageArea2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 64
+collision_mask = 128
 script = ExtResource("38_s8jha")
 damage = 5
 metadata/_custom_type_script = ExtResource("38_s8jha")
