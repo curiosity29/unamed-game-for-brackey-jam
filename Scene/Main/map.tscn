@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfooqy6jls305"]
+[gd_scene load_steps=7 format=3 uid="uid://dfooqy6jls305"]
 
-[ext_resource type="Script" uid="uid://cbi8tx5rbi704" path="res://Scene/Main/map.gd" id="1_mc7t2"]
+[ext_resource type="Script" path="res://Scene/Main/map.gd" id="1_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://bjwc3vytvhb47" path="res://Scene/Component/Character/player.tscn" id="1_x04w0"]
 [ext_resource type="PackedScene" uid="uid://x25myfkfkv66" path="res://Resource/GameObject/Enemy/JohnGodot/john_godot.tscn" id="4_f7grq"]
 [ext_resource type="PackedScene" uid="uid://besuaa660vpjh" path="res://Scene/platform_envaronment/platforms_map_1.tscn" id="5_atpxl"]
+[ext_resource type="PackedScene" uid="uid://b8vtnpitsj74q" path="res://Resource/GameObject/Enemy/Goblin/goblin.tscn" id="7_krui7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mc7t2"]
 vertices = PackedVector2Array(5730, 577, 6670, 559, 7546, 559, 6692, 642, 5816, 642, 4978, 327, 6976, 257, 7852, 257, 7546, 410, 6670, 410, 4767, 718, 5816, 791, -322, 1403.76, 1373.34, 765, 3891, 718, 3013, 687, 2137, 687, 6500, 215, 5624, 215, 7852, 108, 8461.04, -452.93, 8553.86, 1511.17, -322, -160.102, 6500, 66, 6692, 791, 4978, 178, 5624, 66, 2137, 538, 1373.34, 616, 2109, 443, 6976, 108, 4854, 577, 4767, 569, 4854, 428, 3891, 569, 3802, 469, 3802, 320, 4102, 327, 3013, 538, 2926, 469, 2495.66, 230, 2926, 320, 2109, 294, 2118.34, 230, 1233, 443, -1.34375, 616, 2495.66, 81, 4102, 178, 5730, 428, 1233, 294, 2118.34, 81, -1.34375, 765)
@@ -73,6 +74,9 @@ collision_mask = 0
 [node name="JohnGodot4" parent="Containers/EnemyContainer" instance=ExtResource("4_f7grq")]
 position = Vector2(664, 143)
 collision_mask = 0
+
+[node name="Goblin" parent="Containers/EnemyContainer" instance=ExtResource("7_krui7")]
+position = Vector2(516, 578)
 
 [node name="SpawnTimer" type="Timer" parent="Containers"]
 autostart = true

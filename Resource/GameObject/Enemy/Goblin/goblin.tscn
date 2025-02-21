@@ -1,0 +1,135 @@
+[gd_scene load_steps=27 format=3 uid="uid://b8vtnpitsj74q"]
+
+[ext_resource type="Script" uid="uid://1n3yarltnes1" path="res://Resource/GameObject/Enemy/Goblin/goblin.gd" id="1_mi2kh"]
+[ext_resource type="Texture2D" uid="uid://dx5tjrecbjht0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_000.png" id="2_dd5re"]
+[ext_resource type="Texture2D" uid="uid://brqb4whagj4ag" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_001.png" id="3_w1tfo"]
+[ext_resource type="Texture2D" uid="uid://d3sgcodtpjb2q" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_002.png" id="4_0pxem"]
+[ext_resource type="Texture2D" uid="uid://oje514p2xfp0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_003.png" id="5_1s5kn"]
+[ext_resource type="Texture2D" uid="uid://bpr81xmemi44f" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_004.png" id="6_3108v"]
+[ext_resource type="Texture2D" uid="uid://c2srr5b8i0l8x" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_005.png" id="7_33xo3"]
+[ext_resource type="Texture2D" uid="uid://yqxcwlmx3gor" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_006.png" id="8_fwki7"]
+[ext_resource type="Texture2D" uid="uid://6q782o73xkbw" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_007.png" id="9_gvaq5"]
+[ext_resource type="Texture2D" uid="uid://b11fvt2h5kuj2" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_008.png" id="10_5qpk4"]
+[ext_resource type="Texture2D" uid="uid://f5fwkqmnrrjw" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_009.png" id="11_fle63"]
+[ext_resource type="Texture2D" uid="uid://iuhvkbrhlgrw" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_010.png" id="12_gjq60"]
+[ext_resource type="Texture2D" uid="uid://dq6ks5e5uqlya" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_011.png" id="13_58cav"]
+[ext_resource type="Texture2D" uid="uid://cflib4a4to06p" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_012.png" id="14_dyiqx"]
+[ext_resource type="Texture2D" uid="uid://ckew3srd4sx7h" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_013.png" id="15_s8jha"]
+[ext_resource type="Texture2D" uid="uid://clke2dv7dqpaf" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_014.png" id="16_6rmw8"]
+[ext_resource type="Texture2D" uid="uid://d06fvadtjx1uy" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_015.png" id="17_56np0"]
+[ext_resource type="Texture2D" uid="uid://crf1mt2xhju4u" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_016.png" id="18_q64we"]
+[ext_resource type="Texture2D" uid="uid://dfhn7sxmikaij" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_017.png" id="19_o0vc6"]
+[ext_resource type="Texture2D" uid="uid://bqgykipuy0you" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_018.png" id="20_f5js5"]
+[ext_resource type="Texture2D" uid="uid://viflntdmxm1a" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_019.png" id="21_y8xe4"]
+[ext_resource type="Texture2D" uid="uid://ldoqqb0vgijs" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_020.png" id="22_8v7mu"]
+[ext_resource type="Texture2D" uid="uid://cvjtblobn4670" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_021.png" id="23_qvoi6"]
+[ext_resource type="Texture2D" uid="uid://fi5rjomunxmy" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_022.png" id="24_vu6ln"]
+[ext_resource type="Texture2D" uid="uid://bv8nucii0jalr" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_023.png" id="25_2vijr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h23tt"]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("2_dd5re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w1tfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0pxem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1s5kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3108v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_33xo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fwki7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gvaq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5qpk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fle63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gjq60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_58cav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dyiqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s8jha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6rmw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_56np0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q64we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_o0vc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_f5js5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_y8xe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8v7mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qvoi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vu6ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2vijr")
+}],
+"loop": true,
+"name": &"Walk_raight",
+"speed": 5.0
+}]
+
+[node name="Goblin" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(0.25, 0.25)
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("1_mi2kh")
+move_speed = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h23tt")
+animation = &"Walk_raight"
+autoplay = "Walk_raight"
+frame_progress = 0.450468
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-9, 13)
+polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85, 162, 59, 122, 129, 100, 189, 102, 245, 115, 292, 23, 273, -71, 284, -155, 26, -176, -87)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+position = Vector2(-9, 13)
+polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85, 162, 59, 122, 129, 100, 189, 102, 245, 115, 292, 23, 273, -71, 284, -155, 26, -176, -87)

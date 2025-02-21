@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://u62fhlip6j5t"]
 
-[ext_resource type="Script" uid="uid://bxxq3oe5vloku" path="res://Scene/Component/damage_indicator.gd" id="1_uewcg"]
+[ext_resource type="Script" path="res://Scene/Component/damage_indicator.gd" id="1_uewcg"]
 
 [sub_resource type="Animation" id="Animation_uewcg"]
 length = 0.01
