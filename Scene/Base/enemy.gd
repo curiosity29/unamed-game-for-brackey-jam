@@ -28,7 +28,3 @@ func _process(_delta: float) -> void:
 	velocity = velocity.move_toward(direction * move_speed, move_speed * acceleration_mult)
 	
 	move_and_slide()
-
-
-
-
