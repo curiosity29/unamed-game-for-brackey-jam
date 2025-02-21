@@ -1,15 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfooqy6jls305"]
+[gd_scene load_steps=6 format=3 uid="uid://dfooqy6jls305"]
 
 [ext_resource type="Script" uid="uid://cbi8tx5rbi704" path="res://Scene/Main/map.gd" id="1_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://bjwc3vytvhb47" path="res://Scene/Component/Character/player.tscn" id="1_x04w0"]
-[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="2_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://x25myfkfkv66" path="res://Resource/GameObject/Enemy/JohnGodot/john_godot.tscn" id="4_f7grq"]
 [ext_resource type="PackedScene" uid="uid://besuaa660vpjh" path="res://Scene/platform_envaronment/platforms_map_1.tscn" id="5_atpxl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mc7t2"]
-vertices = PackedVector2Array(2152.08, -137.477, 2255.57, 1416.64, -322, 1403.32, -322, -157.469)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-386, -222, 2212, -201, 2324, 1481, -386, 1467)])
+vertices = PackedVector2Array(5730, 577, 6670, 559, 7546, 559, 6692, 642, 5816, 642, 4978, 327, 6976, 257, 7852, 257, 7546, 410, 6670, 410, 4767, 718, 5816, 791, -322, 1403.76, 1373.34, 765, 3891, 718, 3013, 687, 2137, 687, 6500, 215, 5624, 215, 7852, 108, 8461.04, -452.93, 8553.86, 1511.17, -322, -160.102, 6500, 66, 6692, 791, 4978, 178, 5624, 66, 2137, 538, 1373.34, 616, 2109, 443, 6976, 108, 4854, 577, 4767, 569, 4854, 428, 3891, 569, 3802, 469, 3802, 320, 4102, 327, 3013, 538, 2926, 469, 2495.66, 230, 2926, 320, 2109, 294, 2118.34, 230, 1233, 443, -1.34375, 616, 2495.66, 81, 4102, 178, 5730, 428, 1233, 294, 2118.34, 81, -1.34375, 765)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(15, 14, 13, 16), PackedInt32Array(17, 6, 5, 18), PackedInt32Array(7, 19, 20, 21), PackedInt32Array(22, 20, 19, 23), PackedInt32Array(7, 21, 2, 8), PackedInt32Array(24, 3, 2, 21), PackedInt32Array(18, 5, 25, 26), PackedInt32Array(27, 16, 13, 28, 29), PackedInt32Array(30, 6, 17, 23), PackedInt32Array(0, 4, 11, 10, 31), PackedInt32Array(31, 10, 32, 33), PackedInt32Array(33, 32, 34, 35, 36, 37), PackedInt32Array(35, 34, 14, 15, 38), PackedInt32Array(39, 35, 38, 27), PackedInt32Array(40, 41, 39, 27, 29, 42, 43), PackedInt32Array(44, 29, 28, 45), PackedInt32Array(40, 46, 47, 37, 36), PackedInt32Array(1, 0, 48, 9), PackedInt32Array(5, 9, 48, 33, 37), PackedInt32Array(40, 36, 41), PackedInt32Array(49, 44, 45, 22), PackedInt32Array(50, 43, 42, 49, 22), PackedInt32Array(24, 21, 12, 11), PackedInt32Array(51, 13, 12), PackedInt32Array(51, 12, 22, 45), PackedInt32Array(26, 25, 47, 46, 22), PackedInt32Array(46, 50, 22), PackedInt32Array(19, 30, 23), PackedInt32Array(26, 22, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-386, -222, 8522, -519, 8621, 1576, -386, 1467)])
 agent_radius = 64.0
 
 [node name="Map" type="Control"]
@@ -24,203 +23,20 @@ metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
-offset_left = 471.0
-offset_top = 892.0
-offset_right = 1523.0
-offset_bottom = 1047.0
-columns = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer"]
-layout_mode = 2
-text = "1: earth"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.329412, 0.243137, 0.168627, 0.807843)
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer2"]
-layout_mode = 2
-text = "2: wind"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer2/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.298039, 0.298039, 0.298039, 0.792157)
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer3"]
-layout_mode = 2
-text = "3: ice"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer3/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.174378, 0.780699, 0.944802, 0.545098)
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer4"]
-layout_mode = 2
-text = "4: electric"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer4/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.908575, 0.892784, 0.215294, 0.545098)
-
-[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer5"]
-layout_mode = 2
-text = "5: water"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer5"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer5/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0427863, 0.403856, 0.681905, 0.545098)
-
-[node name="VBoxContainer6" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer6"]
-layout_mode = 2
-text = "6: fire"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer6"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer6/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.823133, 0.28138, 0.240094, 0.666667)
-
-[node name="VBoxContainer7" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer7"]
-layout_mode = 2
-text = "7: laight"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer7"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer7/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.933676, 0.959493, 0.944226, 0.545098)
-
-[node name="VBoxContainer8" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer8"]
-layout_mode = 2
-text = "8: arcana"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/VBoxContainer8"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("2_mc7t2")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer/VBoxContainer8/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.661065, 0.239304, 0.911663, 0.545098)
-
 [node name="Player" parent="." instance=ExtResource("1_x04w0")]
 position = Vector2(271, 579)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_mc7t2")
+
+[node name="Obstacles" type="Control" parent="NavigationRegion2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="platforms_map_1" parent="NavigationRegion2D/Obstacles" instance=ExtResource("5_atpxl")]
+position = Vector2(16, 689)
 
 [node name="Containers" type="Control" parent="."]
 layout_mode = 1
@@ -231,14 +47,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
-
-[node name="Obstacles" type="Control" parent="Containers"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="platforms_map_1" parent="Containers/Obstacles" instance=ExtResource("5_atpxl")]
-position = Vector2(16, 689)
 
 [node name="EnemyContainer" type="Control" parent="Containers"]
 layout_mode = 1

@@ -7,7 +7,7 @@
 [node name="platforms" type="Node2D" parent="."]
 
 [node name="platform_standard" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(20400, 75)
+position = Vector2(2240, -489)
 scale = Vector2(1, 1)
 
 [node name="platform_standard2" parent="platforms" instance=ExtResource("1_hx8pu")]
@@ -15,31 +15,31 @@ position = Vector2(65, -17)
 scale = Vector2(5, 1)
 
 [node name="platform_standard3" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(1313, -201)
+position = Vector2(1319, -263)
 
 [node name="platform_standard4" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(2123, -289)
+position = Vector2(2196, -95)
 
 [node name="platform_standard5" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(2963, -166)
+position = Vector2(2985, -313)
 
 [node name="platform_standard6" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(3825, 20)
+position = Vector2(3950, -64)
 
 [node name="platform_standard7" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(4660, -125)
+position = Vector2(4161, -455)
 
 [node name="platform_standard8" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(5365, 10)
+position = Vector2(4913, -205)
 
 [node name="platform_standard9" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(6159, 192)
+position = Vector2(5683, -567)
 
 [node name="platform_standard10" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(6832, 373)
+position = Vector2(5875, 9)
 
 [node name="platform_standard11" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(7625, 178)
+position = Vector2(6729, -223)
 
 [node name="platform_standard12" parent="platforms" instance=ExtResource("1_hx8pu")]
-position = Vector2(8285, 64)
+position = Vector2(7035, -525)

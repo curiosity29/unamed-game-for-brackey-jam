@@ -4,9 +4,9 @@ extends CharacterBody2D
 var move_speed: float = 800
 var acceleration_mult: float = 10.
 var friction_mult: float = 5.
-var jump_velocity: int = -2000
+var jump_velocity: int = -2500
 var is_moving: bool = false
-var gravity_mult: float = 10.
+var gravity_mult: float = 8.
 var current_skill: Callable
 
 
