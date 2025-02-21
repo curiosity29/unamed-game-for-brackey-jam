@@ -4,7 +4,7 @@ extends Resource
 signal cooldown_timeout
 signal charge_timeout
 
-@export var id: String = ""
+@export var id: String = "skill_9"
 @export var name: String = ""
 @export var keybind: String = ""
 @export var charge_time: float = 1.0
@@ -40,7 +40,8 @@ signal charge_timeout
 
 #region casting
 
-var saved_count: int = 0
+## let recipe system how many time charged
+#var saved_count: int = 0
 
 func execute(_cast_global_position: Vector2, _caster: Player) -> void:
 	base_execute_logic()
@@ -48,7 +49,7 @@ func execute(_cast_global_position: Vector2, _caster: Player) -> void:
 func base_execute_logic():
 	start_cooldown()
 	is_charged = false
-	saved_count -= 1
+	#saved_count -= 1
 	
 #endregion
 
@@ -86,7 +87,7 @@ func start_charge():
 func finish_charge():
 	is_on_charge = false
 	is_charged = true
-	saved_count += 1
+	#saved_count += 1
 	charge_timeout.emit()
 
 func update_charge_process(delta: float) -> void:

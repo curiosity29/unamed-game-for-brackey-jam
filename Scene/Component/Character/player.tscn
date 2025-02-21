@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://bjwc3vytvhb47"]
+[gd_scene load_steps=120 format=3 uid="uid://bjwc3vytvhb47"]
 
 [ext_resource type="Script" uid="uid://boy0sqjw8sbwv" path="res://Scene/Component/Character/player.gd" id="1_rum4r"]
 [ext_resource type="Texture2D" uid="uid://bbiujumwu3dcu" path="res://CHarakter/D_Attack.png" id="2_4v7ms"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b1j3o08dpp0ut" path="res://CHarakter/S_Walk.png" id="19_4q6og"]
 [ext_resource type="Texture2D" uid="uid://bvhtr4rsowgfn" path="res://CHarakter/R_Walk.png" id="20_4cpgw"]
 [ext_resource type="Texture2D" uid="uid://db8w8yhven1gm" path="res://CHarakter/U_Walk.png" id="21_o4iyj"]
+[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="22_iy7b6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1x88"]
 atlas = ExtResource("2_4v7ms")
@@ -810,3 +811,24 @@ position = Vector2(0.2, -0.2)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4sx3w")
 animation = &"walk_up"
+
+[node name="SkillIndicatorContainer" type="HBoxContainer" parent="."]
+offset_left = -111.0
+offset_top = -194.0
+offset_right = 110.0
+offset_bottom = -135.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SkillIndicatorContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SkillIndicatorContainer/VBoxContainer"]
+layout_mode = 2
+text = "fire"
+
+[node name="TextureRect" type="TextureRect" parent="SkillIndicatorContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("22_iy7b6")
+expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]

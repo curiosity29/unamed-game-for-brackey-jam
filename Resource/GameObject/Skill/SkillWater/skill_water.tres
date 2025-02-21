@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://gysigykj0sn7"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://gysigykj0sn7"]
 
+[ext_resource type="PackedScene" uid="uid://dfu7ukhrq3iyy" path="res://Resource/GameObject/Summon/water/water_attack/water_attack.tscn" id="1_7jaky"]
 [ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="1_rj1ff"]
 [ext_resource type="Script" uid="uid://ejr5ipohf1rx" path="res://Resource/GameObject/Skill/SkillWater/skill_water_resource.gd" id="2_1qkop"]
 
@@ -7,8 +8,9 @@
 script = ExtResource("2_1qkop")
 id = "water"
 name = "water"
-keybind = ""
+keybind = "skill_5"
 charge_time = 1.0
 cooldown_time = 1.0
 description = ""
+main_scene = ExtResource("1_7jaky")
 metadata/_custom_type_script = ExtResource("1_rj1ff")

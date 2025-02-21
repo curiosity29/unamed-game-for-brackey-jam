@@ -9,7 +9,7 @@ extends Object
 ## 
 
 
-## 
+## inventory is the list of current charged skill
 var inventory: Dictionary[String, int] = {}
 var recipes: Dictionary[Dictionary, Dictionary]
 func add_ingredient_to_inventory(ingredient: String, amount: int = 1) -> void:
@@ -19,6 +19,10 @@ func add_ingredient_to_inventory(ingredient: String, amount: int = 1) -> void:
 		inventory[ingredient] = amount
 	inventory = auto_combine(inventory)
 
+func subtract_ingredient_to_inventory(ingredient: String, amount: int = 1) -> void:
+	add_ingredient_to_inventory(ingredient, -amount)
+	if inventory[ingredient] <=0:
+		inventory.erase(ingredient)
 
 ## Expected inventory format:
 ## {"fire": 2, "water": 1, "earth": 3, "air": 1}

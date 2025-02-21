@@ -1,5 +1,4 @@
 extends Camera2D
-@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 @export var move_speed = 50.0
 
