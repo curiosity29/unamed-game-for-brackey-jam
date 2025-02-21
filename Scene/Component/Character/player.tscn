@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://bjwc3vytvhb47"]
+[gd_scene load_steps=124 format=3 uid="uid://bjwc3vytvhb47"]
 
 [ext_resource type="Script" uid="uid://boy0sqjw8sbwv" path="res://Scene/Component/Character/player.gd" id="1_rum4r"]
 [ext_resource type="Texture2D" uid="uid://bbiujumwu3dcu" path="res://CHarakter/D_Attack.png" id="2_4v7ms"]
@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://bvhtr4rsowgfn" path="res://CHarakter/R_Walk.png" id="20_4cpgw"]
 [ext_resource type="Texture2D" uid="uid://db8w8yhven1gm" path="res://CHarakter/U_Walk.png" id="21_o4iyj"]
 [ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="22_iy7b6"]
+[ext_resource type="Script" uid="uid://biikxf3gic5g1" path="res://Scene/Component/Character/skill_indicator_container.gd" id="22_l5qmd"]
+[ext_resource type="PackedScene" uid="uid://dnj48x774uo6d" path="res://Scene/Component/charged_skill_indicator.tscn" id="22_oy0ki"]
+[ext_resource type="Material" uid="uid://kmeffocd88fs" path="res://Resource/Shader/material/progress_bar.tres" id="23_glqgn"]
+[ext_resource type="Texture2D" uid="uid://bjdngq5t1s3fw" path="res://Resource/Texture/wind_cone.png" id="23_qjhd6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1x88"]
 atlas = ExtResource("2_4v7ms")
@@ -813,23 +817,23 @@ sprite_frames = SubResource("SpriteFrames_4sx3w")
 animation = &"walk_up"
 
 [node name="SkillIndicatorContainer" type="HBoxContainer" parent="."]
-offset_left = -111.0
-offset_top = -194.0
-offset_right = 110.0
-offset_bottom = -135.0
+offset_left = -173.0
+offset_top = -312.0
+offset_right = 167.0
+offset_bottom = -228.0
+script = ExtResource("22_l5qmd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SkillIndicatorContainer"]
+[node name="ChargedSkillIndicator" parent="SkillIndicatorContainer" instance=ExtResource("22_oy0ki")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SkillIndicatorContainer/VBoxContainer"]
+[node name="ChargedSkillIndicator2" parent="SkillIndicatorContainer" instance=ExtResource("22_oy0ki")]
 layout_mode = 2
-text = "fire"
 
-[node name="TextureRect" type="TextureRect" parent="SkillIndicatorContainer/VBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="ChargedSkillIndicator3" parent="SkillIndicatorContainer" instance=ExtResource("22_oy0ki")]
 layout_mode = 2
-texture = ExtResource("22_iy7b6")
-expand_mode = 1
+
+[node name="ChargedSkillIndicator4" parent="SkillIndicatorContainer" instance=ExtResource("22_oy0ki")]
+layout_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -1023,3 +1027,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.661065, 0.239304, 0.911663, 0.545098)
+
+[node name="ChargingSkillContainer" type="VBoxContainer" parent="."]
+offset_left = -113.0
+offset_top = -194.0
+offset_right = 111.0
+offset_bottom = -126.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChargingSkillContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SkillIconTexture" type="TextureRect" parent="ChargingSkillContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("23_qjhd6")
+expand_mode = 1
+
+[node name="SkillNameLabel" type="Label" parent="ChargingSkillContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "fire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChargeBar" type="ColorRect" parent="ChargingSkillContainer"]
+material = ExtResource("23_glqgn")
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2

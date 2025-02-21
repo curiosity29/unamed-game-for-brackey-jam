@@ -2,14 +2,17 @@ class_name SkillResource
 extends Resource
 
 signal cooldown_timeout
-signal charge_timeout
+#signal charge_timeout
+signal charge_success
 
 @export var id: String = ""
 @export var name: String = ""
 @export var keybind: String = "skill_9"
-@export var charge_time: float = 1.0
+@export var max_charge_time: float = 1.0
+@export var min_charge_time: float = 0.7
 @export var cooldown_time: float = 1.0
 @export var description: String = ""
+@export var icon: Texture = preload("res://Resource/Texture/wind_cone.png")
 @export var main_scene: PackedScene
 @export var sub_scene: PackedScene # just for the table to be less messy with different column name
 
@@ -85,15 +88,18 @@ func start_charge():
 	charged_duration = 0
 
 func finish_charge():
+	stop_charge()
+	#saved_count += 1
+	if charged_duration > min_charge_time:
+		charge_success.emit()
+func stop_charge():
 	is_on_charge = false
 	is_charged = true
-	#saved_count += 1
-	charge_timeout.emit()
 
 func update_charge_process(delta: float) -> void:
 	if is_on_charge:
 		charged_duration += delta
-		if charged_duration > charge_time:
-			finish_charge()
+		if charged_duration > max_charge_time:
+			stop_charge()
 
 #endregion
