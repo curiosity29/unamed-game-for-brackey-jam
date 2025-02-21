@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var enemy_typ: Dictionary
 
-
+@onready var hitbox: Area2D = $Hitbox 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 @export var move_speed = 50.0
