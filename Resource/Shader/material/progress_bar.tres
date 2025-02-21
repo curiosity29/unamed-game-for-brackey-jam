@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://kmeffocd88fs"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://debej55asjie6"]
 
-[ext_resource type="Shader" uid="uid://b088u4e8sjmfu" path="res://Resource/Shader/script/progress_bar.gdshader" id="1_t31vy"]
+[ext_resource type="Shader" path="res://Resource/Shader/script/progress_bar.gdshader" id="1_t31vy"]
 
 [sub_resource type="Gradient" id="Gradient_t31vy"]
 colors = PackedColorArray(0, 1, 0, 1, 1, 0, 0, 1)

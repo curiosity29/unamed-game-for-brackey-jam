@@ -1,9 +1,11 @@
+
+
+
 class_name Enemy
 extends CharacterBody2D
 
 
-var enemy_typ: Dictionary
-
+var direction: Vector2 = Vector2.ZERO
 @export var acceleration_mult: float = 5
 @onready var hitbox: Area2D = %Hitbox 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
@@ -23,7 +25,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	nav_agent.target_position = player.global_position
-	var direction: Vector2 = (nav_agent.get_next_path_position() - global_position).normalized()
+	direction = (nav_agent.get_next_path_position() - global_position).normalized()
 	
 	velocity = velocity.move_toward(direction * move_speed, move_speed * acceleration_mult)
 	
