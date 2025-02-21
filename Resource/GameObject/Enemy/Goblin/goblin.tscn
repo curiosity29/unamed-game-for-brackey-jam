@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8vtnpitsj74q"]
+[gd_scene load_steps=40 format=3 uid="uid://b8vtnpitsj74q"]
 
 [ext_resource type="Script" uid="uid://1n3yarltnes1" path="res://Resource/GameObject/Enemy/Goblin/goblin.gd" id="1_mi2kh"]
 [ext_resource type="Texture2D" uid="uid://dx5tjrecbjht0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_000.png" id="2_dd5re"]
@@ -25,6 +25,19 @@
 [ext_resource type="Texture2D" uid="uid://cvjtblobn4670" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_021.png" id="23_qvoi6"]
 [ext_resource type="Texture2D" uid="uid://fi5rjomunxmy" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_022.png" id="24_vu6ln"]
 [ext_resource type="Texture2D" uid="uid://bv8nucii0jalr" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_023.png" id="25_2vijr"]
+[ext_resource type="Texture2D" uid="uid://1rgnlusjqxax" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_000.png" id="26_dyiqx"]
+[ext_resource type="Texture2D" uid="uid://ccfrayi6tfequ" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_001.png" id="27_s8jha"]
+[ext_resource type="Texture2D" uid="uid://cmx4h1cu12x0k" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_002.png" id="28_6rmw8"]
+[ext_resource type="Texture2D" uid="uid://c3xw131uxfehy" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_003.png" id="29_56np0"]
+[ext_resource type="Texture2D" uid="uid://cyb1cmineaopm" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_004.png" id="30_q64we"]
+[ext_resource type="Texture2D" uid="uid://b017rr6nx335u" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_005.png" id="31_o0vc6"]
+[ext_resource type="Texture2D" uid="uid://bh53d7y3e7lby" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_006.png" id="32_f5js5"]
+[ext_resource type="Texture2D" uid="uid://cgfkrfnivanuq" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_007.png" id="33_y8xe4"]
+[ext_resource type="Texture2D" uid="uid://m3c0e1l5fgs2" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_008.png" id="34_8v7mu"]
+[ext_resource type="Texture2D" uid="uid://cpffisrtohnag" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_009.png" id="35_qvoi6"]
+[ext_resource type="Texture2D" uid="uid://gbta37vmor37" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_010.png" id="36_vu6ln"]
+[ext_resource type="Texture2D" uid="uid://d4ny7jsnp1oba" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_011.png" id="37_2vijr"]
+[ext_resource type="Script" uid="uid://bl1tnphjxuelc" path="res://PureScript/BaseNode/damage_area.gd" id="38_s8jha"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h23tt"]
 animations = [{
@@ -104,32 +117,79 @@ animations = [{
 "loop": true,
 "name": &"Walk_raight",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_dyiqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_s8jha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6rmw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_56np0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_q64we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_o0vc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_f5js5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_y8xe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_8v7mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_qvoi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vu6ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_2vijr")
+}],
+"loop": false,
+"name": &"attack_right",
+"speed": 5.0
 }]
 
-[node name="Goblin" type="CharacterBody2D" groups=["enemy"]]
+[node name="Goblin" type="CharacterBody2D" node_paths=PackedStringArray("animated") groups=["enemy"]]
 scale = Vector2(0.25, 0.25)
 collision_layer = 64
 collision_mask = 64
 script = ExtResource("1_mi2kh")
+animated = NodePath("AnimatedSprite2D")
+acceleration_mult = null
 move_speed = 100.0
+health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h23tt")
-animation = &"Walk_raight"
+animation = &"attack_right"
 autoplay = "Walk_raight"
-frame_progress = 0.450468
+frame = 4
+frame_progress = 0.236954
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-9, 13)
 polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85, 162, 59, 122, 129, 100, 189, 102, 245, 115, 292, 23, 273, -71, 284, -155, 26, -176, -87)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="DamageArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("38_s8jha")
+damage = 5
+metadata/_custom_type_script = ExtResource("38_s8jha")
 
-[node name="Hitbox" type="Area2D" parent="."]
-unique_name_in_owner = true
-collision_layer = 64
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
-position = Vector2(-9, 13)
-polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85, 162, 59, 122, 129, 100, 189, 102, 245, 115, 292, 23, 273, -71, 284, -155, 26, -176, -87)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea2D"]
+position = Vector2(304, -48)
+polygon = PackedVector2Array(4, 28, 60, 24, 100, 68, 116, 156, 124, 208, 104, 252, 88, 284, 64, 328, 24, 376, -68, 364, -172, 368, -196, 260, -128, 220, -52, 140, -52, 40)

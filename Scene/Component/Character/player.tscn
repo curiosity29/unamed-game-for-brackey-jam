@@ -1023,3 +1023,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.661065, 0.239304, 0.911663, 0.545098)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+position = Vector2(1.49012e-08, 0.1)
+polygon = PackedVector2Array(-82, -68.1, -42, -98.1, 2, -119.1, 32, -122.1, 39, -67.1, 29, 60.9, -18, 58.9, -61, 50.9, -73, 11.9, -84, -35.1)
