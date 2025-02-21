@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dh1wfwhjtmdvi"]
+
+[ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="1_j6n5b"]
+[ext_resource type="PackedScene" uid="uid://bjmwate7yc2fv" path="res://Resource/GameObject/Summon/FireBall/fire_ball.tscn" id="1_o80du"]
+[ext_resource type="Script" uid="uid://p8npi38pr1hf" path="res://Resource/GameObject/Skill/SkillFire/skill_fire_resource.gd" id="2_0huww"]
+
+[resource]
+script = ExtResource("2_0huww")
+fire_ball_scene = ExtResource("1_o80du")
+id = "fire"
+name = "fire ball"
+keybind = "skill_6"
+charge_time = 1.0
+cooldown_time = 1.0
+description = ""
+main_scene = ExtResource("1_o80du")
+metadata/_custom_type_script = ExtResource("1_j6n5b")

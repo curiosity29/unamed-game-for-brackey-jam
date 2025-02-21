@@ -13,3 +13,15 @@ var game_object_scenes: Dictionary[String, PackedScene] = {
 	"attack_water": load("res://Resource/GameObject/Summon/water/water_attack/water_attack.tscn")
 	
 }
+
+var _all_skills: ResourceGroup = preload("res://Resource/ResourceGroup/all_skills.tres")
+var all_skills: Array[SkillResource]
+var skills_map: Dictionary[String, SkillResource] ## id to resource
+var keybind_to_skill_map: Dictionary[String, SkillResource] ## binding to resource
+
+func _ready() -> void:
+	_all_skills.load_all_into(all_skills)
+	for skill_resource: SkillResource in all_skills:
+		skills_map[skill_resource.id] = skill_resource
+		keybind_to_skill_map[skill_resource.keybind] = skill_resource
+		
