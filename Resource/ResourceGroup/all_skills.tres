@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://u66uu7bd4rhj"]
+
+[ext_resource type="Script" uid="uid://0gw7t1sm56pd" path="res://addons/godot_resource_groups/resource_group.gd" id="1_ldyiq"]
+
+[resource]
+script = ExtResource("1_ldyiq")
+base_folder = "res://Resource/GameObject/Skill"
+includes = Array[String](["**.tres"])
+excludes = Array[String]([])
+paths = Array[String](["res://Resource/GameObject/Skill/SkillEarthPlatform/skill_earth_platform.tres", "res://Resource/GameObject/Skill/SkillElectric/skill_electric.tres", "res://Resource/GameObject/Skill/SkillFire/skill_fire.tres", "res://Resource/GameObject/Skill/SkillWater/skill_water.tres", "res://Resource/GameObject/Skill/SkillWind/skill_wind.tres"])
+metadata/_custom_type_script = ExtResource("1_ldyiq")

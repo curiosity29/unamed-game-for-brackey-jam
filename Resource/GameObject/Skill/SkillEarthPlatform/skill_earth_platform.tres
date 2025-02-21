@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dfdxmpmuo8vn0"]
+
+[ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="1_jcpbc"]
+[ext_resource type="Script" uid="uid://dhr311uvxy52m" path="res://Resource/GameObject/Skill/SkillEarthPlatform/skill_earth_platform_resource.gd" id="2_x831a"]
+
+[resource]
+script = ExtResource("2_x831a")
+id = "earth_platform"
+name = "earth platform"
+keybind = ""
+charge_time = 1.0
+cooldown_time = 1.0
+description = ""
+metadata/_custom_type_script = ExtResource("1_jcpbc")
