@@ -2,12 +2,13 @@ class_name Enemy
 extends CharacterBody2D
 
 
+var enemy_typ: Dictionary
+
+
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 @export var move_speed = 50.0
-@export var acceleration_mult: float = 5
 var hittable_interface: HittableInterface
-@onready var hitbox: Area2D = %Hitbox
 
 @export var health: int = 20
 var player: Player:
@@ -16,11 +17,24 @@ var player: Player:
 func _ready() -> void:
 	hittable_interface = HittableInterface.new(health, self)
 
+	enemy_typ = {
+	"Goblin" :{
+	
+		"damage": 5,
+		"effect": Callable(self,"goblin_with_a_club")
+	}
+	}
 
-func _process(_delta: float) -> void:
+
+func _process(delta: float) -> void:
 	nav_agent.target_position = player.global_position
 	var direction: Vector2 = (nav_agent.get_next_path_position() - global_position).normalized()
 	
-	velocity = velocity.move_toward(direction * move_speed, move_speed * acceleration_mult)
+	velocity = direction * move_speed
 	
 	move_and_slide()
+
+
+
+func goblin_with_a_club() -> void:
+	pass
