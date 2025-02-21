@@ -4,9 +4,9 @@ extends Resource
 signal cooldown_timeout
 signal charge_timeout
 
-@export var id: String = "skill_9"
+@export var id: String = ""
 @export var name: String = ""
-@export var keybind: String = ""
+@export var keybind: String = "skill_9"
 @export var charge_time: float = 1.0
 @export var cooldown_time: float = 1.0
 @export var description: String = ""

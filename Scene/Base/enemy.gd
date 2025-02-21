@@ -26,7 +26,7 @@ func _ready() -> void:
 	}
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	nav_agent.target_position = player.global_position
 	var direction: Vector2 = (nav_agent.get_next_path_position() - global_position).normalized()
 	

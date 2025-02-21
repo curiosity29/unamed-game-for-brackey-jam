@@ -12,6 +12,7 @@ extends Object
 ## inventory is the list of current charged skill
 var inventory: Dictionary[String, int] = {}
 var recipes: Dictionary[Dictionary, Dictionary]
+
 func add_ingredient_to_inventory(ingredient: String, amount: int = 1) -> void:
 	if ingredient in inventory:
 		inventory[ingredient] += amount
@@ -31,28 +32,28 @@ func subtract_ingredient_to_inventory(ingredient: String, amount: int = 1) -> vo
 ## {"fire": 2, "earth": 1}: {"lava": 1, "fire": 1}} (ingredients -> new ingredients)
 ## Expected result format (new inventory):
 ## {"steam": 1, "dust": 2, "lava": 1, "fire": 1, "earth": 2, "air": 1}
-func auto_combine(inventory: Dictionary[String, int]) -> Dictionary[String, int]:
+func auto_combine(input_inventory: Dictionary[String, int]) -> Dictionary[String, int]:
 
 	var is_combined = false
 	for recipe in recipes:
 		var can_combine = true
 		## check if enough ingredients for the recipe
 		for item in recipe:
-			if item not in inventory or inventory[item] < recipe[item]:
+			if item not in input_inventory or input_inventory[item] < recipe[item]:
 				can_combine = false
 				break
 		if can_combine:
 			is_combined = true
 			## remove ingredients
-			inventory = subtract_counter(inventory, recipe)
+			input_inventory = subtract_counter(input_inventory, recipe)
 			## add new ingredients
-			inventory = add_counter(inventory, recipes[recipe])
+			input_inventory = add_counter(input_inventory, recipes[recipe])
 	
 	## return if nothing combined
 	if is_combined:
-		return auto_combine(inventory)
+		return auto_combine(input_inventory)
 	else:
-		return inventory
+		return input_inventory
 
 func add_counter(counter_a, counter_b):
 	for item in counter_b:

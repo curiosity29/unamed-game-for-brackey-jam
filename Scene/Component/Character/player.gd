@@ -11,7 +11,7 @@ var current_skill: Callable
 
 
 var hittable_interface: HittableInterface
-var direction: Vector2
+var current_direction: Vector2
 
 var anim_sprite: AnimatedSprite2D
 @export var health: int = 100
@@ -51,7 +51,7 @@ func _input(event: InputEvent) -> void:
 		is_moving = false
 	if event.is_action_pressed("click"):
 		if last_charged_skill: 
-			last_charged_skill.execute(get_global_mouse_position(), self)
+			last_charged_skill.execute(mouse_pos, self)
 			recipe_manager.subtract_ingredient_to_inventory(last_charged_skill.id)
 
 		
@@ -73,10 +73,12 @@ func _physics_process(delta: float) -> void:
 		
 	var direction_value = Input.get_axis("left", "right")
 	if direction_value < 0:
-		anim_sprite.flip_h = true
+		current_direction = Vector2.LEFT
+		#anim_sprite.flip_h = true
 	elif direction_value > 0:
-		anim_sprite.flip_h = false
-		
+		current_direction = Vector2.RIGHT
+		#anim_sprite.flip_h = false
+	
 	if direction_value:
 		#var direction = Vector2.LEFT * direction_value
 		velocity.x = move_toward(velocity.x, move_speed * sign(direction_value), move_speed * delta * acceleration_mult)
@@ -88,8 +90,10 @@ func _physics_process(delta: float) -> void:
 		#direction = (get_global_mouse_position() - global_position).normalized()
 		#velocity = direction * move_speed
 	move_and_slide()
-	update_animation(direction)
-
+	
+	if direction_value: update_animation(current_direction)
+	else: update_animation(Vector2.ZERO)
+		
 func update_animation(direction: Vector2) -> void:
 	if direction == Vector2.ZERO:
 		anim_sprite.play("idle_down")

@@ -37,6 +37,10 @@ SoundPlayer="*res://Global/SoundPlayer.gd"
 SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
 VisualHelper="*res://Global/VisualHelper.gd"
 
+[debug]
+
+gdscript/warnings/narrowing_conversion=0
+
 [display]
 
 window/size/viewport_width=1920

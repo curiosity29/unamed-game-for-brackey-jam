@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bmmhxk02ps45c"]
+
+[ext_resource type="PackedScene" uid="uid://c0hrjxekhgnba" path="res://Resource/GameObject/Summon/EarthBall/earth_ball.tscn" id="1_2jjal"]
+[ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="1_30ubt"]
+[ext_resource type="Script" uid="uid://do4cdbcmkg3mm" path="res://Resource/GameObject/Skill/EarthBall/skill_earth_resource.gd" id="2_2jjal"]
+
+[resource]
+script = ExtResource("2_2jjal")
+id = "earth_ball"
+name = "earth ball"
+keybind = "skill_1"
+charge_time = 1.0
+cooldown_time = 1.0
+description = ""
+main_scene = ExtResource("1_2jjal")
+metadata/_custom_type_script = ExtResource("1_30ubt")
