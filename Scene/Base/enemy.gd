@@ -18,13 +18,7 @@ var player: Player:
 func _ready() -> void:
 	hittable_interface = HittableInterface.new(health, self)
 
-	enemy_typ = {
-	"Goblin" :{
-	
-		"damage": 5,
-		"effect": Callable(self,"goblin_with_a_club")
-	}
-	}
+
 
 
 func _process(_delta: float) -> void:
@@ -37,5 +31,4 @@ func _process(_delta: float) -> void:
 
 
 
-func goblin_with_a_club() -> void:
-	pass
+
