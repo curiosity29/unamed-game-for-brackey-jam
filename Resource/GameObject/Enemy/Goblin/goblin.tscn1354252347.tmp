@@ -1,6 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://b8vtnpitsj74q"]
 
 [ext_resource type="Script" uid="uid://1n3yarltnes1" path="res://Resource/GameObject/Enemy/Goblin/goblin.gd" id="1_mi2kh"]
+[ext_resource type="Texture2D" uid="uid://dx5tjrecbjht0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_000.png" id="2_dd5re"]
 [ext_resource type="Texture2D" uid="uid://brqb4whagj4ag" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_001.png" id="3_w1tfo"]
 [ext_resource type="Texture2D" uid="uid://d3sgcodtpjb2q" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_002.png" id="4_0pxem"]
 [ext_resource type="Texture2D" uid="uid://oje514p2xfp0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_003.png" id="5_1s5kn"]
@@ -8,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://c2srr5b8i0l8x" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_005.png" id="7_33xo3"]
 [ext_resource type="Texture2D" uid="uid://yqxcwlmx3gor" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_006.png" id="8_fwki7"]
 [ext_resource type="Texture2D" uid="uid://6q782o73xkbw" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Walking/0_Ogre_Walking_007.png" id="9_gvaq5"]
-[ext_resource type="Texture2D" uid="uid://m3c0e1l5fgs2" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_008.png" id="24_fle63"]
 [ext_resource type="Texture2D" uid="uid://cmx4h1cu12x0k" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/Slashing/0_Ogre_Slashing_002.png" id="28_6rmw8"]
 [ext_resource type="Texture2D" uid="uid://crfexucvt47ox" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/attack_left/0_Ogre_Slashing_002.png" id="28_t338q"]
 [ext_resource type="Texture2D" uid="uid://4sk2332plhx8" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Goblin/attack_left/0_Ogre_Slashing_003.png" id="29_1d030"]
@@ -36,6 +36,35 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h23tt"]
 animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("2_dd5re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w1tfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0pxem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1s5kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3108v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_33xo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fwki7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gvaq5")
+}],
+"loop": true,
+"name": &"Walk_raight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("28_t338q")
@@ -83,11 +112,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("33_y8xe4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_fle63")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack_right",
 "speed": 5.0
 }, {
@@ -119,34 +145,8 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("56_6rjx0")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_w1tfo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_0pxem")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_1s5kn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_3108v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_33xo3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_fwki7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_gvaq5")
-}],
-"loop": true,
-"name": &"walk_right",
 "speed": 5.0
 }]
 
@@ -163,8 +163,7 @@ damage_right = NodePath("DamageArea2D")
 rotation = 6.28319
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_h23tt")
-animation = &"walk_right"
-speed_scale = 2.0
+animation = &"attack_right"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
