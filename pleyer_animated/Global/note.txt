@@ -1,3 +1,0 @@
-this folder is for global script or scene
-
-Event: global event
