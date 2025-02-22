@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfooqy6jls305"]
 
-[ext_resource type="Script" path="res://Scene/Main/map.gd" id="1_mc7t2"]
+[ext_resource type="Script" uid="uid://cbi8tx5rbi704" path="res://Scene/Main/map.gd" id="1_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://bjwc3vytvhb47" path="res://Scene/Component/Character/player.tscn" id="1_x04w0"]
 [ext_resource type="PackedScene" uid="uid://x25myfkfkv66" path="res://Resource/GameObject/Enemy/JohnGodot/john_godot.tscn" id="4_f7grq"]
 [ext_resource type="PackedScene" uid="uid://besuaa660vpjh" path="res://Scene/platform_envaronment/platforms_map_1.tscn" id="5_atpxl"]
@@ -28,6 +28,7 @@ metadata/_edit_lock_ = true
 position = Vector2(271, 579)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-384, -49)
 navigation_polygon = SubResource("NavigationPolygon_mc7t2")
 
 [node name="Obstacles" type="Control" parent="NavigationRegion2D"]

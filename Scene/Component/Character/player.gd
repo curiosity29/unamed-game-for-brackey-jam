@@ -46,6 +46,12 @@ func _ready() -> void:
 	
 	hittable_interface = HittableInterface.new(health, self)
 	init_skills()
+
+	hittable_interface.dead_callback = on_dead
+
+func on_dead():
+	## change to lose screen
+	pass
 	
 func init_skills():
 	all_skills = Database.all_skills

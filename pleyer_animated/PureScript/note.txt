@@ -1,3 +1,0 @@
-script folder, for script for like object, resource
-corgi: I place scene script in the same folder as the scene, thought?
-

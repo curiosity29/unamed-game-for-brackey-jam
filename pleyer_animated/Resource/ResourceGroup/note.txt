@@ -1,2 +1,0 @@
-resource group for getting and the resource path to load into database
-

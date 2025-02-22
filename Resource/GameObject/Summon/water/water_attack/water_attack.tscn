@@ -63,8 +63,8 @@ self_modulate = Color(1, 1, 1, 0.996078)
 position = Vector2(235, 19)
 scale = Vector2(0.29469, 0.199942)
 sprite_frames = SubResource("SpriteFrames_qtf67")
+animation = &"default_1"
 autoplay = "default"
-frame_progress = 0.829499
 script = ExtResource("3_e5ygl")
 
 [node name="DamageArea2D" parent="." index="1"]
