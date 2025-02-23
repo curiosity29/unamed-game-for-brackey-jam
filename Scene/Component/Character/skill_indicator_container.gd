@@ -9,7 +9,9 @@ var recipe_manager: RecipeSystem:
 var inventory: Dictionary[String, int]:
 	get: return recipe_manager.inventory
 var skill_id_to_indicator_index: Dictionary[String, int] = {}
-var current_first_empty_index: int = 0
+var current_first_empty_index: int = 0:
+	set(value):
+		current_first_empty_index = value
 var max_skill_slots: int:
 	get: return get_child_count()
 
@@ -20,12 +22,14 @@ func _ready() -> void:
 func setup_update_connection():
 	if not player.is_node_ready():
 		player.ready.connect(setup_update_connection, CONNECT_ONE_SHOT)
+		return
 	recipe_manager.ingredient_added.connect(add_charged_skill)
 	recipe_manager.ingredient_removed.connect(remove_used_skill)
 	recipe_manager.ingredient_combined.connect(combine_charged_skill)
 
 var chargedSkillIndicator: ChargedSkillIndicator
 func add_charged_skill(skill_id: String, amount: int):
+	#print("adding at", current_first_empty_index)
 	var skill_resource = player.skills_map[skill_id]
 	## found duplicate, add 1 to existing charge
 	if skill_id in skill_id_to_indicator_index:
@@ -41,7 +45,9 @@ func add_charged_skill(skill_id: String, amount: int):
 		chargedSkillIndicator.modulate.a = 1
 		current_first_empty_index += 1
 
+	#print("added ", current_first_empty_index)
 func remove_used_skill(skill_id: String, amount: int):
+	#print("removing ", skill_id)
 	assert(skill_id in skill_id_to_indicator_index, "attempting to remove skill that player does not charged")
 	var skill_resource = player.skills_map[skill_id]
 	#print("remove at %d" % current_index)
@@ -52,14 +58,14 @@ func remove_used_skill(skill_id: String, amount: int):
 		current_first_empty_index -= 1
 		skill_id_to_indicator_index.erase(skill_id)
 
-func combine_charged_skill(input_skills: Dictionary[String, int], output_skills: Dictionary[String, int]) -> void:
+func combine_charged_skill(_input_skills: Dictionary[String, int], output_skills: Dictionary[String, int]) -> void:
 	## NOTE: will break if size of output > size of input
 	## move what's left in front, put new output to back
 	var new_skill_id_to_indicator_index: Dictionary[String, int]
 	## create what's left in inventory that's not new first, then the rest
-	var current_first_empty_index = 0
+	current_first_empty_index = 0
 	for skill_id in inventory:
-		if skill_id in skill_id_to_indicator_index and skill_id not in output_skills:
+		if skill_id not in output_skills:
 			new_skill_id_to_indicator_index[skill_id] = current_first_empty_index
 			chargedSkillIndicator = get_child(current_first_empty_index)
 			chargedSkillIndicator.skill_resource = player.skills_map[skill_id]
@@ -67,12 +73,11 @@ func combine_charged_skill(input_skills: Dictionary[String, int], output_skills:
 			current_first_empty_index += 1
 
 	for skill_id in output_skills:
-		if skill_id not in skill_id_to_indicator_index:
-			new_skill_id_to_indicator_index[skill_id] = current_first_empty_index
-			chargedSkillIndicator = get_child(current_first_empty_index)
-			chargedSkillIndicator.skill_resource = player.skills_map[skill_id]
-			chargedSkillIndicator.amount = inventory[skill_id]
-			current_first_empty_index += 1
+		new_skill_id_to_indicator_index[skill_id] = current_first_empty_index
+		chargedSkillIndicator = get_child(current_first_empty_index)
+		chargedSkillIndicator.skill_resource = player.skills_map[skill_id]
+		chargedSkillIndicator.amount = inventory[skill_id]
+		current_first_empty_index += 1
 	
 	## update new indexs
 	skill_id_to_indicator_index = new_skill_id_to_indicator_index
@@ -80,3 +85,5 @@ func combine_charged_skill(input_skills: Dictionary[String, int], output_skills:
 	## hide the rest
 	for child_index in range(current_first_empty_index, max_skill_slots):
 		get_child(child_index).modulate.a = 0
+
+	#print("combined ", current_first_empty_index)
