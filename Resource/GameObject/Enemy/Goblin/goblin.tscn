@@ -175,6 +175,7 @@ polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85
 
 [node name="DamageArea2D" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 129
 script = ExtResource("38_s8jha")
 metadata/_custom_type_script = ExtResource("38_s8jha")
 
@@ -185,6 +186,7 @@ polygon = PackedVector2Array(4, 28, 60, 24, 100, 68, 116, 156, 124, 208, 104, 25
 
 [node name="DamageArea2D2" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 129
 script = ExtResource("38_s8jha")
 metadata/_custom_type_script = ExtResource("38_s8jha")
 

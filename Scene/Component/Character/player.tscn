@@ -22,8 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bvhtr4rsowgfn" path="res://Scene/Component/Character/CharacterSprite/R_Walk.png" id="20_4cpgw"]
 [ext_resource type="Texture2D" uid="uid://db8w8yhven1gm" path="res://Scene/Component/Character/CharacterSprite/U_Walk.png" id="21_o4iyj"]
 [ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="22_iy7b6"]
-[ext_resource type="Script" uid="uid://biikxf3gic5g1" path="res://Scene/Component/Character/skill_indicator_container.gd" id="22_l5qmd"]
-[ext_resource type="PackedScene" uid="uid://dnj48x774uo6d" path="res://Scene/Component/charged_skill_indicator.tscn" id="22_oy0ki"]
+[ext_resource type="Script" path="res://Scene/Component/Character/skill_indicator_container.gd" id="22_l5qmd"]
+[ext_resource type="PackedScene" path="res://Scene/Component/charged_skill_indicator.tscn" id="22_oy0ki"]
 [ext_resource type="Material" uid="uid://debej55asjie6" path="res://Resource/Shader/material/progress_bar.tres" id="23_glqgn"]
 [ext_resource type="Texture2D" uid="uid://bjdngq5t1s3fw" path="res://Resource/Texture/wind_cone.png" id="23_qjhd6"]
 
