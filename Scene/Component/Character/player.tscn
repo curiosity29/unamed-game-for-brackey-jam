@@ -816,12 +816,13 @@ scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_4sx3w")
 animation = &"walk_up"
 
-[node name="SkillIndicatorContainer" type="HBoxContainer" parent="."]
+[node name="SkillIndicatorContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("player")]
 offset_left = -173.0
 offset_top = -312.0
 offset_right = 167.0
 offset_bottom = -228.0
 script = ExtResource("22_l5qmd")
+player = NodePath("..")
 
 [node name="ChargedSkillIndicator" parent="SkillIndicatorContainer" instance=ExtResource("22_oy0ki")]
 layout_mode = 2

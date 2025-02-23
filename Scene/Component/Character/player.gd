@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var skill_name_label: Label = $ChargingSkillContainer/HBoxContainer/SkillNameLabel
 @onready var charge_bar: ColorRect = $ChargingSkillContainer/ChargeBar
 @onready var skill_indicator_container: SkillIndicatorContainer = $SkillIndicatorContainer
+@onready var charging_skill_container: VBoxContainer = $ChargingSkillContainer
 
 
 var move_speed: float = 800
@@ -31,6 +32,7 @@ var charging_skill: SkillResource:
 		
 
 ## NOTE: currently let player have all the skill
+var skills_map: Dictionary[String, SkillResource]
 var all_skills: Array[SkillResource]
 
 var charged_skills: Dictionary[String, int] = {}
@@ -54,16 +56,21 @@ func on_dead():
 	pass
 	
 func init_skills():
+	charging_skill_container.hide()
 	all_skills = Database.all_skills
-	
+	var recipe_dict: Dictionary[Dictionary, Dictionary] = {}
+	for recipe_resource in Database.all_recipes:
+		recipe_dict[recipe_resource.ingredients] = recipe_resource.results
+	recipe_manager.recipes = recipe_dict
+	#recipe_manager.recipes = Database.recipes
 	## for when charge system is setup
 	for skill_resource: SkillResource in all_skills:
+		skills_map[skill_resource.id] = skill_resource
 		skill_resource.charge_success.connect(
 			func():
-				print(recipe_manager.inventory.size())
 				if recipe_manager.inventory.size() < max_skill_count:
 					recipe_manager.add_ingredient_to_inventory(skill_resource.id)
-					skill_indicator_container.add_charged_skill(skill_resource)
+					#skill_indicator_container.add_charged_skill(skill_resource)
 		)
 
 
@@ -75,8 +82,8 @@ func update_charge_visual():
 	
 func use_skill(mouse_pos: Vector2):
 	last_charged_skill.execute(mouse_pos, self)
-	recipe_manager.subtract_ingredient_to_inventory(last_charged_skill.id)
-	skill_indicator_container.remove_used_skill(last_charged_skill)
+	recipe_manager.subtract_ingredient_from_inventory(last_charged_skill.id)
+	#skill_indicator_container.remove_used_skill(last_charged_skill)
 	
 	
 func _input(event: InputEvent) -> void:
@@ -102,12 +109,13 @@ func _input(event: InputEvent) -> void:
 			if Input.is_action_pressed(skill_resource.keybind):
 				charging_skill = skill_resource
 				charging_skill.start_charge()
+				charging_skill_container.show()
 				#recipe_manager.add_ingredient_to_inventory(skill_resource.id)
 				#print("added skill: %s" % skill_resource.name)
 	elif event.is_action_released(charging_skill.keybind):
 		charging_skill.finish_charge()
 		charging_skill = null
-		
+		charging_skill_container.hide()
 
 func _process(delta: float) -> void:
 	for skill_resource in all_skills:

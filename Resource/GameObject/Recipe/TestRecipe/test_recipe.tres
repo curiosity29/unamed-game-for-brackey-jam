@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RecipeResource" load_steps=2 format=3 uid="uid://ceu3il421dmgr"]
+
+[ext_resource type="Script" uid="uid://yvar7d1ddbx5" path="res://PureScript/ResourceScript/recipe_resource.gd" id="1_sp6w3"]
+
+[resource]
+script = ExtResource("1_sp6w3")
+id = "watter_electric_to_2fire"
+ingredients = Dictionary[String, int]({
+"electric": 1,
+"water": 1
+})
+results = Dictionary[String, int]({
+"fire": 2
+})
+metadata/_custom_type_script = ExtResource("1_sp6w3")
