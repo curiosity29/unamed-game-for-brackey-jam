@@ -158,7 +158,6 @@ script = ExtResource("1_mi2kh")
 animated = NodePath("AnimatedSprite2D")
 damage_left = NodePath("DamageArea2D2")
 damage_right = NodePath("DamageArea2D")
-move_speed = 60.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 6.28319
@@ -177,8 +176,6 @@ polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85
 [node name="DamageArea2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 129
-monitoring = false
-monitorable = false
 script = ExtResource("38_s8jha")
 metadata/_custom_type_script = ExtResource("38_s8jha")
 
@@ -190,7 +187,6 @@ polygon = PackedVector2Array(4, 28, 60, 24, 100, 68, 116, 156, 124, 208, 104, 25
 [node name="DamageArea2D2" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 129
-monitoring = false
 script = ExtResource("38_s8jha")
 metadata/_custom_type_script = ExtResource("38_s8jha")
 
@@ -211,5 +207,4 @@ scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85, 162, 59, 122, 129, 100, 189, 102, 245, 115, 292, 23, 273, -71, 284, -155, 26, -176, -87)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
 autostart = true
