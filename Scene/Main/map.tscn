@@ -77,10 +77,8 @@ position = Vector2(664, 143)
 collision_mask = 0
 
 [node name="Goblin" parent="Containers/EnemyContainer" instance=ExtResource("7_krui7")]
-position = Vector2(2463, 520)
-acceleration_mult = 5.0
+position = Vector2(2455, 466)
 move_speed = 50.0
-health = 20
 
 [node name="SpawnTimer" type="Timer" parent="Containers"]
 autostart = true

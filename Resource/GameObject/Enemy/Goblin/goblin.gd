@@ -38,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 			
 
 func attack() -> void:
-	print("attack")
+	
 	
 	if left_or_right == 2:
 		damage_right.monitoring = true

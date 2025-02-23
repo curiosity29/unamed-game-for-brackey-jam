@@ -1,0 +1,177 @@
+[gd_scene load_steps=30 format=3 uid="uid://cscp8j5sbm4om"]
+
+[ext_resource type="Script" uid="uid://dsqienf4ol67x" path="res://Resource/GameObject/Enemy/archer/archer.gd" id="1_1tpth"]
+[ext_resource type="Script" uid="uid://bl1tnphjxuelc" path="res://PureScript/BaseNode/damage_area.gd" id="2_7vf4v"]
+[ext_resource type="Texture2D" uid="uid://bu7u25ssqv38e" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_000.png" id="2_am73w"]
+[ext_resource type="Texture2D" uid="uid://bsfea2yulro7a" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_001.png" id="3_06le6"]
+[ext_resource type="Texture2D" uid="uid://bnxrj5241o0aj" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_003.png" id="3_14aqw"]
+[ext_resource type="Texture2D" uid="uid://dn8ff7td8srux" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_000.png" id="3_mp5vy"]
+[ext_resource type="Texture2D" uid="uid://i5323ywgfs40" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_004.png" id="4_3ox80"]
+[ext_resource type="Texture2D" uid="uid://cyfyafi28v63b" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_001.png" id="4_mw58g"]
+[ext_resource type="Texture2D" uid="uid://b1nh7vnnimg5o" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_002.png" id="4_n5wre"]
+[ext_resource type="Texture2D" uid="uid://cmnouvcd0li5g" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_002.png" id="5_0n3my"]
+[ext_resource type="Texture2D" uid="uid://6aorou4nnkwd" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_003.png" id="5_38u2n"]
+[ext_resource type="Texture2D" uid="uid://cj6jhk6s6rdcm" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_005.png" id="5_s1r12"]
+[ext_resource type="Texture2D" uid="uid://ccthkv1olp7de" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_003.png" id="6_4k8vg"]
+[ext_resource type="Texture2D" uid="uid://s3blu62ptf8q" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_004.png" id="6_kljj7"]
+[ext_resource type="Texture2D" uid="uid://dg2llabynb373" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_006.png" id="6_vpx0v"]
+[ext_resource type="Texture2D" uid="uid://bogl56ihh8xqo" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_004.png" id="7_6m6wp"]
+[ext_resource type="Texture2D" uid="uid://d04b77etop0wg" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_007.png" id="7_fx6gn"]
+[ext_resource type="Texture2D" uid="uid://ln7ou40odel1" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_005.png" id="7_wtqdv"]
+[ext_resource type="Texture2D" uid="uid://cpq8mfa621kdf" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_006.png" id="8_1et58"]
+[ext_resource type="Texture2D" uid="uid://4f06jdsl7ubs" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_008.png" id="8_n3vsq"]
+[ext_resource type="Texture2D" uid="uid://dk11vqj666x4r" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_005.png" id="8_rjbu2"]
+[ext_resource type="Texture2D" uid="uid://c5m5hpttmf7s5" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_006.png" id="9_5cvya"]
+[ext_resource type="Texture2D" uid="uid://cp0b4iyicqg0v" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_009.png" id="9_7hy82"]
+[ext_resource type="Texture2D" uid="uid://mldlrfawljtn" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_007.png" id="10_xdw7y"]
+[ext_resource type="Texture2D" uid="uid://ddxed2oat1gpc" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_008.png" id="11_am73w"]
+[ext_resource type="Texture2D" uid="uid://k2rv23s1hyxu" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_009.png" id="12_06le6"]
+[ext_resource type="Texture2D" uid="uid://27jm8esqom1r" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_008.png" id="27_mwsfx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rflxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_am73w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_06le6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n5wre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_38u2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kljj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wtqdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1et58")
+}],
+"loop": true,
+"name": &"attack_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mp5vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mw58g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0n3my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4k8vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6m6wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rjbu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5cvya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xdw7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_am73w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_06le6")
+}],
+"loop": true,
+"name": &"jump_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_14aqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ox80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s1r12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vpx0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fx6gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n3vsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7hy82")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxxjv"]
+atlas = ExtResource("27_mwsfx")
+region = Rect2(1470.21, 404.048, 365.941, 227.85)
+
+[node name="archer" type="CharacterBody2D" node_paths=PackedStringArray("animated") groups=["enemy"]]
+rotation = -6.28319
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("1_1tpth")
+animated = NodePath("AnimatedSprite2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 65
+collision_mask = 65
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(92.9999, 28.0004, 106, 15.0005, 133, -16.9994, 136, -53.9994, 122, -90.9995, 123.001, -133.999, 106.001, -138, 82.0007, -160, 62.0008, -189, 11.0009, -196, -9.99909, -204, -58.9991, -210, -88.9991, -212, -95.9992, -183, -98.9993, -157, -120.999, -114.001, -128, -105.001, -148.999, -117.001, -145, -80.0006, -163, -78.0007, -184, -96.0008, -158, -67.0007, -147, -43.0007, -144, -15.0006, -121, 11.9995, -105, 38.9995, -141, 58.9994, -136, 106.999, -133.001, 179.999, -118.001, 200.999, -100.001, 231, -81.0011, 252, -50.0013, 291, -5.00138, 308, 48.9987, 291, 64.9987, 296, 84.9988, 258, 71.9991, 210, 64.9991, 194, 89.9991, 209, 119.999, 220.001, 129.999, 197.001, 143.999, 152.001, 119.999, 128.001, 92.9996, 99.0004, 85.9997, 65.0004)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rflxi")
+animation = &"attack_right"
+frame_progress = 0.199113
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(92.9999, 28.0004, 106, 15.0005, 133, -16.9994, 136, -53.9994, 122, -90.9995, 123.001, -133.999, 106.001, -138, 82.0007, -160, 62.0008, -189, 11.0009, -196, -9.99909, -204, -58.9991, -210, -88.9991, -212, -95.9992, -183, -98.9993, -157, -120.999, -114.001, -128, -105.001, -148.999, -117.001, -145, -80.0006, -163, -78.0007, -184, -96.0008, -158, -67.0007, -147, -43.0007, -144, -15.0006, -121, 11.9995, -105, 38.9995, -141, 58.9994, -136, 106.999, -133.001, 179.999, -118.001, 200.999, -100.001, 231, -81.0011, 252, -50.0013, 291, -5.00138, 308, 48.9987, 291, 64.9987, 296, 84.9988, 258, 71.9991, 210, 64.9991, 194, 89.9991, 209, 119.999, 220.001, 129.999, 197.001, 143.999, 152.001, 119.999, 128.001, 92.9996, 99.0004, 85.9997, 65.0004)
+
+[node name="arrow" type="Node2D" parent="."]
+position = Vector2(0.999978, 5)
+
+[node name="DamageArea2D" type="Area2D" parent="arrow"]
+collision_layer = 0
+collision_mask = 129
+monitoring = false
+monitorable = false
+script = ExtResource("2_7vf4v")
+metadata/_custom_type_script = ExtResource("2_7vf4v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="arrow/DamageArea2D"]
+position = Vector2(138, 47.0006)
+rotation = -0.00216605
+polygon = PackedVector2Array(-13.9349, -30.0303, -7.95441, -21.0173, 9.02602, -11.9804, 11.0477, -21.9761, 11.0759, -34.976, -0.919693, -37.0021, -10.9197, -37.0238, -10.9544, -21.0238)
+
+[node name="Sprite2D" type="Sprite2D" parent="arrow"]
+position = Vector2(110, 33.0005)
+rotation = -0.276316
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_dxxjv")
