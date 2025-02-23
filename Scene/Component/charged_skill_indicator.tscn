@@ -11,7 +11,8 @@ script = ExtResource("1_d8nql")
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "fire"
+text = "fire
+x3"
 horizontal_alignment = 1
 vertical_alignment = 1
 

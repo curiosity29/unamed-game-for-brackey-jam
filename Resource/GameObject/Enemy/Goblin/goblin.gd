@@ -33,5 +33,3 @@ func attack() -> void:
 			
 		if left_or_right == 1:
 			animated.play("attack_left")
-			
-		

@@ -19,9 +19,17 @@ var all_skills: Array[SkillResource]
 var skills_map: Dictionary[String, SkillResource] ## id to resource
 var keybind_to_skill_map: Dictionary[String, SkillResource] ## binding to resource
 
+var _all_recipes: ResourceGroup = preload("res://Resource/ResourceGroup/all_recipes.tres")
+var all_recipes: Array[RecipeResource]
+var recipes_map: Dictionary[String, RecipeResource]
+
 func _ready() -> void:
 	_all_skills.load_all_into(all_skills)
 	for skill_resource: SkillResource in all_skills:
 		skills_map[skill_resource.id] = skill_resource
 		keybind_to_skill_map[skill_resource.keybind] = skill_resource
 		
+
+	_all_recipes.load_all_into(all_recipes)
+	for recipe_resource: RecipeResource in all_recipes:
+		recipes_map[recipe_resource.id] = recipe_resource
