@@ -7,6 +7,7 @@ extends Resource
 @export var ingredients: Dictionary[String, int]
 @export var results: Dictionary[String, int]
 
+@export var price: int = 1
 ## what happen on merge
 func execute() -> void:
 	pass

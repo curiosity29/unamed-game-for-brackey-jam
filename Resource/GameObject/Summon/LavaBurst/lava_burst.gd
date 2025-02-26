@@ -5,7 +5,8 @@ extends Control
 var shoot_direction: Vector2
 @export var burn_tick_time: float = 1.0
 @export var burn_tick_damage: int = 3
-
+@onready var effect_area: Area2D = $EffectArea
+@export var damage: int = 4
 func execute() -> void:
 		for enemy: Enemy in get_tree().get_nodes_in_group("enemy"):
 			if effect_area.overlaps_area(enemy.hitbox):
