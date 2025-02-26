@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bgacs15ajpw1p"]
+
+[ext_resource type="Shader" uid="uid://bf5ahv1e0gr2g" path="res://Resource/Shader/script/melting.gdshader" id="1_0lb0i"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0lb0i"]
+frequency = 0.0033
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_euk2c"]
+noise = SubResource("FastNoiseLite_0lb0i")
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_0lb0i")
+shader_parameter/subdivisions = 8
+shader_parameter/movement = 0.0
+shader_parameter/noise_scale = 0.4
+shader_parameter/noiseTexture = SubResource("NoiseTexture2D_euk2c")

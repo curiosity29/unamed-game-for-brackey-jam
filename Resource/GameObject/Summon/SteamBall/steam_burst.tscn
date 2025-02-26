@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://d34i3o7wvb3ew"]
+
+[ext_resource type="Script" uid="uid://ddx6iuwc0cgi1" path="res://Resource/GameObject/Summon/SteamBall/steam_burst.gd" id="1_qpxgq"]
+[ext_resource type="Shader" uid="uid://bppa2udstsgup" path="res://Resource/Shader/script/expand.gdshader" id="1_wjpgu"]
+[ext_resource type="Texture2D" uid="uid://5aksewbab8j" path="res://icon.svg" id="2_6bxx1"]
+
+[sub_resource type="Animation" id="Animation_qpxgq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/progress_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6bxx1"]
+resource_name = "blowup"
+length = 0.6
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"execute"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/progress_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wo23n"]
+_data = {
+&"RESET": SubResource("Animation_qpxgq"),
+&"blowup": SubResource("Animation_6bxx1")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qpxgq"]
+shader = ExtResource("1_wjpgu")
+shader_parameter/burst_point = Vector2(0.5, 0.5)
+shader_parameter/min_dist_mult = Vector2(0.5, 0.5)
+shader_parameter/max_dist_mult = Vector2(3, 3)
+shader_parameter/duration = 0.6
+shader_parameter/progress_value = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6bxx1"]
+radius = 256.0
+
+[node name="SteamBurst" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpxgq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wo23n")
+}
+autoplay = "blowup"
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qpxgq")
+scale = Vector2(3, 3)
+texture = ExtResource("2_6bxx1")
+
+[node name="EffectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
+shape = SubResource("CircleShape2D_6bxx1")

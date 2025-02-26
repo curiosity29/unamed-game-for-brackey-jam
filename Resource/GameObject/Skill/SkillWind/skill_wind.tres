@@ -1,17 +1,19 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://3d2eng0ukoyy"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://3d2eng0ukoyy"]
 
 [ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="1_eipqg"]
+[ext_resource type="Texture2D" uid="uid://bjdngq5t1s3fw" path="res://Resource/Texture/wind_cone.png" id="1_igoi3"]
 [ext_resource type="Script" uid="uid://cro4mjj30sg5m" path="res://Resource/GameObject/Skill/SkillWind/skill_wind_resource.gd" id="2_uf4mt"]
 [ext_resource type="PackedScene" uid="uid://clpnjmdex5ieu" path="res://Resource/GameObject/Summon/WindCone/wind_cone.tscn" id="3_imfb6"]
 
 [resource]
 script = ExtResource("2_uf4mt")
-wind_cone_scene = ExtResource("3_imfb6")
 id = "wind_cone"
 name = "wind cone"
 keybind = "skill_2"
-charge_time = null
+max_charge_time = 1.0
+min_charge_time = 0.7
 cooldown_time = null
 description = null
+icon = ExtResource("1_igoi3")
 main_scene = ExtResource("3_imfb6")
 metadata/_custom_type_script = ExtResource("1_eipqg")

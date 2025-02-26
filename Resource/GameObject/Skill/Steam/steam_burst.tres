@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=4 format=3 uid="uid://be35t3qy8upxb"]
+
+[ext_resource type="Texture2D" uid="uid://bjdngq5t1s3fw" path="res://Resource/Texture/wind_cone.png" id="1_86ofq"]
+[ext_resource type="PackedScene" uid="uid://d34i3o7wvb3ew" path="res://Resource/GameObject/Summon/SteamBall/steam_burst.tscn" id="2_bg6ws"]
+[ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="2_elfye"]
+
+[resource]
+script = ExtResource("2_elfye")
+id = "steam_burst"
+name = "steam burst"
+keybind = ""
+max_charge_time = 1.0
+min_charge_time = 0.7
+cooldown_time = 1.0
+description = ""
+icon = ExtResource("1_86ofq")
+main_scene = ExtResource("2_bg6ws")
+metadata/_custom_type_script = ExtResource("2_elfye")

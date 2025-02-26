@@ -7,5 +7,5 @@ script = ExtResource("1_i800o")
 base_folder = "res://Resource/GameObject/Recipe"
 includes = Array[String](["**.tres"])
 excludes = Array[String]([])
-paths = Array[String](["res://Resource/GameObject/Recipe/TestRecipe/test_recipe.tres"])
+paths = Array[String](["res://Resource/GameObject/Recipe/Steam/steam.tres", "res://Resource/GameObject/Recipe/TestRecipe/test_recipe.tres"])
 metadata/_custom_type_script = ExtResource("1_i800o")

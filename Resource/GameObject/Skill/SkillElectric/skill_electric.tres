@@ -1,17 +1,19 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bvtswkhvxv8ex"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bvtswkhvxv8ex"]
 
+[ext_resource type="Texture2D" uid="uid://bjdngq5t1s3fw" path="res://Resource/Texture/wind_cone.png" id="1_eoydg"]
 [ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="1_u6ol5"]
 [ext_resource type="PackedScene" uid="uid://bpjvusnfqqgqk" path="res://Resource/GameObject/Summon/ElectricBall/electric_ball.tscn" id="1_w4nc7"]
 [ext_resource type="Script" uid="uid://b0px4jsw1h363" path="res://Resource/GameObject/Skill/SkillElectric/skill_electric_resource.gd" id="2_6o4ts"]
 
 [resource]
 script = ExtResource("2_6o4ts")
-electric_ball_scene = ExtResource("1_w4nc7")
 id = "electric"
 name = "electric aura"
 keybind = "skill_4"
-charge_time = null
+max_charge_time = 1.0
+min_charge_time = 0.7
 cooldown_time = null
 description = null
+icon = ExtResource("1_eoydg")
 main_scene = ExtResource("1_w4nc7")
 metadata/_custom_type_script = ExtResource("1_u6ol5")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvlnr5tlil7at"]
+
+[ext_resource type="Script" uid="uid://ulo5m700vse4" path="res://Resource/GameObject/Summon/LavaBurst/lava_burst.gd" id="1_p45hb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jukq"]
+
+[node name="LavaBurst" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p45hb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="EffectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]
+shape = SubResource("RectangleShape2D_4jukq")

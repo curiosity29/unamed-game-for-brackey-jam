@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://rpdg72d22nik"]
+
+[ext_resource type="Texture2D" uid="uid://bjdngq5t1s3fw" path="res://Resource/Texture/wind_cone.png" id="1_dbgoi"]
+[ext_resource type="Script" uid="uid://c0ecbwvyqjk7u" path="res://PureScript/ResourceScript/skill_resource.gd" id="2_hr4ua"]
+[ext_resource type="PackedScene" uid="uid://cibl5ux3u5kk6" path="res://Resource/GameObject/Summon/IceCube/ice_cube.tscn" id="2_s5n20"]
+[ext_resource type="Script" uid="uid://v5k1t6c83q8y" path="res://Resource/GameObject/Skill/SkillIce/skill_ice_resource.gd" id="4_m6nx7"]
+
+[resource]
+script = ExtResource("4_m6nx7")
+offset = Vector2(150, 0)
+id = "ice_cube"
+name = "ice cube"
+keybind = "skill_3"
+max_charge_time = 1.0
+min_charge_time = 0.7
+cooldown_time = 1.0
+description = ""
+icon = ExtResource("1_dbgoi")
+main_scene = ExtResource("2_s5n20")
+metadata/_custom_type_script = ExtResource("2_hr4ua")
