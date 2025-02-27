@@ -158,7 +158,7 @@ script = ExtResource("1_mi2kh")
 animated = NodePath("AnimatedSprite2D")
 damage_left = NodePath("DamageArea2D2")
 damage_right = NodePath("DamageArea2D")
-move_speed = 60.0
+distance = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 6.28319
@@ -195,10 +195,10 @@ script = ExtResource("38_s8jha")
 metadata/_custom_type_script = ExtResource("38_s8jha")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea2D2"]
-position = Vector2(-7.00001, 38)
+position = Vector2(-4.00016, 37)
 rotation = 1.56037
 scale = Vector2(0.25, 0.25)
-polygon = PackedVector2Array(4, 28, 60, 24, 100, 68, 116, 156, 124, 208, 104, 252, 88, 284, 64, 328, 24, 376, -68, 364, -172, 368, -196, 260, -128, 220, -52, 140, -52, 40)
+polygon = PackedVector2Array(154.74, 121.621, 90.2843, 164.951, 6.33055, 160.075, 116, 156, 124, 208, 104, 252, 88, 284, 64, 328, 15.5762, 424.186, -72.2104, 403.269, -279.698, 353.102, -196, 260, -128, 220, -57.9163, 183.407, 5.12059, 276.069)
 
 [node name="Hitbox" type="Area2D" parent="."]
 unique_name_in_owner = true

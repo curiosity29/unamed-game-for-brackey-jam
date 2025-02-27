@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://5aksewbab8j" path="res://icon.svg" id="1_qthqu"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 65
-collision_mask = 65
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_ptqdt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
