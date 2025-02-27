@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfooqy6jls305"]
 
-[ext_resource type="Script" uid="uid://cbi8tx5rbi704" path="res://Scene/Main/map.gd" id="1_mc7t2"]
+[ext_resource type="Script" path="res://Scene/Main/map.gd" id="1_mc7t2"]
 [ext_resource type="PackedScene" uid="uid://bjwc3vytvhb47" path="res://Scene/Component/Character/player.tscn" id="1_x04w0"]
 [ext_resource type="PackedScene" uid="uid://x25myfkfkv66" path="res://Resource/GameObject/Enemy/JohnGodot/john_godot.tscn" id="4_f7grq"]
-[ext_resource type="PackedScene" uid="uid://dwsji6vvcywvx" path="res://Scene/platform_envaronment/platform_map_2.tscn" id="4_gtw2m"]
+[ext_resource type="PackedScene" uid="uid://bvwmafrhxfrps" path="res://Scene/platform_envaronment/platform_map_2.tscn" id="4_gtw2m"]
 [ext_resource type="PackedScene" uid="uid://b8vtnpitsj74q" path="res://Resource/GameObject/Enemy/Goblin/goblin.tscn" id="7_krui7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mc7t2"]
@@ -77,7 +77,6 @@ collision_mask = 0
 
 [node name="Goblin" parent="Containers/EnemyContainer" instance=ExtResource("7_krui7")]
 position = Vector2(1400, 836)
-move_speed = 50.0
 
 [node name="SpawnTimer" type="Timer" parent="Containers"]
 autostart = true

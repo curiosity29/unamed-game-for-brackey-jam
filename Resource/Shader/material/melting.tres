@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bgacs15ajpw1p"]
 
-[ext_resource type="Shader" uid="uid://bf5ahv1e0gr2g" path="res://Resource/Shader/script/melting.gdshader" id="1_0lb0i"]
+[ext_resource type="Shader" path="res://Resource/Shader/script/melting.gdshader" id="1_0lb0i"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0lb0i"]
 frequency = 0.0033

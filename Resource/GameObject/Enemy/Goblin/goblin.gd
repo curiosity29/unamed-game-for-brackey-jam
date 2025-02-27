@@ -8,6 +8,7 @@ var is_attack: bool = false
 var can_attack: bool = true
 
 func _ready():
+	super()
 	attack_timer.timeout.connect(_on_timer_timeout)
 
 	attack_timer.start()

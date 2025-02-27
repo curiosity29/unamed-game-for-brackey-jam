@@ -1,15 +1,12 @@
 
-
-
 class_name Enemy
 extends CharacterBody2D
 
-
-var direction: Vector2 = Vector2.ZERO
+@export var distance: float = 0
 @export var acceleration_mult: float = 5
 # gravitation
 @export var is_gravity: bool = true
-@export var gravity: float = 10
+@export var gravity: float = 800
 @export var jump_force = 15
 
 @onready var hitbox: Area2D = %Hitbox 
@@ -28,15 +25,20 @@ func _ready() -> void:
 
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	#gravity
+	
+
+	if global_position.distance_to(player.global_position) > distance:
+		nav_agent.target_position = player.global_position
+		var direction = (nav_agent.get_next_path_position() - global_position).normalized()
+		
+	
+		velocity = velocity.move_toward(direction * move_speed, move_speed * acceleration_mult)
+	
+		move_and_slide()
 
 
 	
-	nav_agent.target_position = player.global_position
-	direction = (nav_agent.get_next_path_position() - global_position).normalized()
 	
-	velocity = velocity.move_toward(direction * move_speed, move_speed * acceleration_mult)
-	
-	move_and_slide()
 	

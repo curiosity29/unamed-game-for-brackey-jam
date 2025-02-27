@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0hrjxekhgnba"]
 
-[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_33el4"]
+[ext_resource type="Texture2D" uid="uid://5aksewbab8j" path="res://icon.svg" id="1_33el4"]
 [ext_resource type="PackedScene" uid="uid://lxyb6nw1e8y7" path="res://Scene/Base/projectile.tscn" id="1_a0qwp"]
 [ext_resource type="Script" uid="uid://dk57ynxnhqqv0" path="res://Resource/GameObject/Summon/EarthBall/earth_ball.gd" id="2_7j4xg"]
 

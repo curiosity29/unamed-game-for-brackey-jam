@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bjmwate7yc2fv"]
 
-[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="1_buw3l"]
+[ext_resource type="Texture2D" uid="uid://5aksewbab8j" path="res://icon.svg" id="1_buw3l"]
 [ext_resource type="Script" uid="uid://bpw5snn83lejd" path="res://Resource/GameObject/Summon/FireBall/fire_ball.gd" id="1_etvno"]
 [ext_resource type="Material" uid="uid://64cv1y8j30gs" path="res://Resource/Shader/material/fire_ball.tres" id="2_21f12"]
 
