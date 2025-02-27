@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnj48x774uo6d"]
 
 [ext_resource type="Script" uid="uid://vjdnmkgkk54u" path="res://Scene/Component/charged_skill_indicator.gd" id="1_d8nql"]
-[ext_resource type="Texture2D" uid="uid://d0t5hnttjjsnl" path="res://icon.svg" id="2_8c440"]
+[ext_resource type="Texture2D" uid="uid://5aksewbab8j" path="res://icon.svg" id="2_8c440"]
 
 [node name="ChargedSkillIndicator" type="VBoxContainer"]
 custom_minimum_size = Vector2(80, 80)

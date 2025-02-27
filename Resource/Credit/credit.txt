@@ -1,0 +1,6 @@
++ Shader: 
+electric circle shader: https://godotshaders.com/shader/electric-ball-canvas-item/
+fire shader: https://godotshaders.com/shader/improved-fireball/
+
+
++ 

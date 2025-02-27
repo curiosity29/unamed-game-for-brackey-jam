@@ -55,7 +55,7 @@ project/assembly_name="Unamed game for brackey jam"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/signal_lens/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/signal_lens/plugin.cfg")
 
 [global_group]
 

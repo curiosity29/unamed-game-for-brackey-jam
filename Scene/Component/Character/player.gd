@@ -1,6 +1,12 @@
 class_name Player
 extends CharacterBody2D
 
+## TODO: 
+## + add a raycast to the floor or similar way 
+## to check whether player is close enough to the floor to jump
+## instead of using is_on_floor() 
+## to avoid being unable to jump while moving downhill
+
 @onready var skill_icon_texture: TextureRect = $ChargingSkillContainer/HBoxContainer/SkillIconTexture
 @onready var skill_name_label: Label = $ChargingSkillContainer/HBoxContainer/SkillNameLabel
 @onready var charge_bar: ColorRect = $ChargingSkillContainer/ChargeBar
