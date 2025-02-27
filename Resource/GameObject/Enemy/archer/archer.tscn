@@ -147,6 +147,7 @@ animated = NodePath("AnimatedSprite2D")
 arrow_left = NodePath("arrow_left")
 arrow_right = NodePath("arrow_right")
 distance = 800.0
+health = 30
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
@@ -160,14 +161,14 @@ scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(92.9999, 28.0004, 106, 15.0005, 133, -16.9994, 136, -53.9994, 122, -90.9995, 123.001, -133.999, 106.001, -138, 82.0007, -160, 62.0008, -189, 11.0009, -196, -9.99909, -204, -58.9991, -210, -88.9991, -212, -95.9992, -183, -98.9993, -157, -120.999, -114.001, -128, -105.001, -148.999, -117.001, -145, -80.0006, -163, -78.0007, -184, -96.0008, -158, -67.0007, -147, -43.0007, -144, -15.0006, -121, 11.9995, -105, 38.9995, -141, 58.9994, -136, 106.999, -133.001, 179.999, -118.001, 200.999, -100.001, 231, -81.0011, 252, -50.0013, 291, -5.00138, 308, 48.9987, 291, 64.9987, 296, 84.9988, 258, 71.9991, 210, 64.9991, 194, 89.9991, 209, 119.999, 220.001, 129.999, 197.001, 143.999, 152.001, 119.999, 128.001, 92.9996, 99.0004, 85.9997, 65.0004)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 3.0
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_rflxi")
-animation = &"attack_right"
-frame_progress = 0.984634
+animation = &"walk_right"
+frame_progress = 0.270947
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -203,6 +204,7 @@ texture = SubResource("AtlasTexture_dxxjv")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="arrow_left"]
 
 [node name="arrow_right" type="CharacterBody2D" parent="."]
+visible = false
 position = Vector2(103, 33.0005)
 rotation = -0.225981
 script = ExtResource("26_06le6")

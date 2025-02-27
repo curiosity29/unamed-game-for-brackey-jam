@@ -10,6 +10,7 @@ var is_attack: bool = false
 var can_attack: bool = true
 
 func _ready():
+	super()
 	attack_timer.timeout.connect(_on_timer_timeout)
 	attack_timer.start()
 
@@ -22,6 +23,7 @@ func _physics_process(_delta: float) -> void:
 			attack()
 			can_attack = false
 			is_attack = true
+		
 	else:
 		is_attack = false
 	
@@ -35,8 +37,10 @@ func _physics_process(_delta: float) -> void:
 			animated.play("walk_right")
 
 func attack() -> void:
+	velocity = Vector2.ZERO
 	if left_or_right == 2:
 		animated.play("attack_right")
 		arrow_right.visible = true
 	elif left_or_right == 1:
 		animated.play("attack_left")
+	
