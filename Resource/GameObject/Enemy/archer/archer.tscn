@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://cscp8j5sbm4om"]
+[gd_scene load_steps=27 format=3 uid="uid://cscp8j5sbm4om"]
 
 [ext_resource type="Script" uid="uid://dsqienf4ol67x" path="res://Resource/GameObject/Enemy/archer/archer.gd" id="1_1tpth"]
-[ext_resource type="Script" uid="uid://bl1tnphjxuelc" path="res://PureScript/BaseNode/damage_area.gd" id="2_7vf4v"]
 [ext_resource type="Texture2D" uid="uid://bu7u25ssqv38e" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_000.png" id="2_am73w"]
 [ext_resource type="Texture2D" uid="uid://bsfea2yulro7a" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_001.png" id="3_06le6"]
 [ext_resource type="Texture2D" uid="uid://bnxrj5241o0aj" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_003.png" id="3_14aqw"]
@@ -26,8 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://mldlrfawljtn" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_007.png" id="10_xdw7y"]
 [ext_resource type="Texture2D" uid="uid://ddxed2oat1gpc" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_008.png" id="11_am73w"]
 [ext_resource type="Texture2D" uid="uid://k2rv23s1hyxu" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_009.png" id="12_06le6"]
-[ext_resource type="Script" uid="uid://bif0e7ym248fb" path="res://Resource/GameObject/Enemy/archer/arrow/arrow.gd" id="26_06le6"]
-[ext_resource type="Texture2D" uid="uid://27jm8esqom1r" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_008.png" id="27_mwsfx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rflxi"]
 animations = [{
@@ -134,18 +131,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dxxjv"]
-atlas = ExtResource("27_mwsfx")
-region = Rect2(1470.21, 404.048, 365.941, 227.85)
-
-[node name="archer" type="CharacterBody2D" node_paths=PackedStringArray("animated", "arrow_left", "arrow_right") groups=["enemy"]]
+[node name="archer" type="CharacterBody2D" node_paths=PackedStringArray("animated") groups=["enemy"]]
 rotation = -6.28319
 collision_layer = 64
 collision_mask = 64
 script = ExtResource("1_1tpth")
 animated = NodePath("AnimatedSprite2D")
-arrow_left = NodePath("arrow_left")
-arrow_right = NodePath("arrow_right")
 distance = 800.0
 health = 30
 
@@ -168,67 +159,8 @@ autostart = true
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_rflxi")
 animation = &"walk_right"
-frame_progress = 0.270947
+frame_progress = 0.565399
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(92.9999, 28.0004, 106, 15.0005, 133, -16.9994, 136, -53.9994, 122, -90.9995, 123.001, -133.999, 106.001, -138, 82.0007, -160, 62.0008, -189, 11.0009, -196, -9.99909, -204, -58.9991, -210, -88.9991, -212, -95.9992, -183, -98.9993, -157, -120.999, -114.001, -128, -105.001, -148.999, -117.001, -145, -80.0006, -163, -78.0007, -184, -96.0008, -158, -67.0007, -147, -43.0007, -144, -15.0006, -121, 11.9995, -105, 38.9995, -141, 58.9994, -136, 106.999, -133.001, 179.999, -118.001, 200.999, -100.001, 231, -81.0011, 252, -50.0013, 291, -5.00138, 308, 48.9987, 291, 64.9987, 296, 84.9988, 258, 71.9991, 210, 64.9991, 194, 89.9991, 209, 119.999, 220.001, 129.999, 197.001, 143.999, 152.001, 119.999, 128.001, 92.9996, 99.0004, 85.9997, 65.0004)
-
-[node name="arrow_left" type="CharacterBody2D" parent="."]
-visible = false
-position = Vector2(-191, 19.9991)
-rotation = 0.0203745
-script = ExtResource("26_06le6")
-
-[node name="DamageArea2D" type="Area2D" parent="arrow_left"]
-collision_layer = 0
-collision_mask = 129
-monitoring = false
-monitorable = false
-script = ExtResource("2_7vf4v")
-destroy_owner_on_hit = true
-metadata/_custom_type_script = ExtResource("2_7vf4v")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="arrow_left/DamageArea2D"]
-position = Vector2(46.3164, 15.0597)
-rotation = -0.00216605
-scale = Vector2(1, 0.761344)
-polygon = PackedVector2Array(-13.9349, -30.0303, -7.95441, -21.0173, 9.02602, -11.9804, 11.0477, -21.9761, 11.0759, -34.976, -0.919693, -37.0021, -10.9197, -37.0238, -10.9544, -21.0238)
-
-[node name="Sprite2D" type="Sprite2D" parent="arrow_left"]
-position = Vector2(71.0056, -0.446379)
-rotation = -3.01002
-scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_dxxjv")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="arrow_left"]
-
-[node name="arrow_right" type="CharacterBody2D" parent="."]
-visible = false
-position = Vector2(103, 33.0005)
-rotation = -0.225981
-script = ExtResource("26_06le6")
-move_speed = 100.0
-
-[node name="DamageArea2D" type="Area2D" parent="arrow_right"]
-collision_layer = 0
-collision_mask = 129
-monitoring = false
-monitorable = false
-script = ExtResource("2_7vf4v")
-destroy_owner_on_hit = true
-metadata/_custom_type_script = ExtResource("2_7vf4v")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="arrow_right/DamageArea2D"]
-position = Vector2(0.0891418, 17.464)
-rotation = -0.00216605
-scale = Vector2(1, 0.761344)
-polygon = PackedVector2Array(-13.9349, -30.0303, -32.8927, -11.38, 9.02602, -11.9804, 23.6736, 11.2652, 11.0759, -34.976, -0.919693, -37.0021, -10.9197, -37.0238, -10.9544, -21.0238)
-
-[node name="Sprite2D" type="Sprite2D" parent="arrow_right"]
-position = Vector2(-33.1247, 5.7234)
-rotation = -0.0981498
-scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_dxxjv")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="arrow_right"]

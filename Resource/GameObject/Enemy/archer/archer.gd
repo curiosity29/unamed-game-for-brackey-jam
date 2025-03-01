@@ -3,8 +3,6 @@ extends "res://Scene/Base/enemy.gd"
 @onready var attack_timer = $Timer
 var left_or_right: int 
 @export var animated: AnimatedSprite2D
-@export var arrow_left: CharacterBody2D
-@export var arrow_right: CharacterBody2D
 
 var is_attack: bool = false
 var can_attack: bool = true
@@ -38,9 +36,11 @@ func _physics_process(_delta: float) -> void:
 
 func attack() -> void:
 	velocity = Vector2.ZERO
+	
 	if left_or_right == 2:
 		animated.play("attack_right")
-		arrow_right.visible = true
+		add_child(load("res://Resource/GameObject/Enemy/archer/arrow/arrow_right.tscn").instantiate())
 	elif left_or_right == 1:
 		animated.play("attack_left")
+		add_child(load("res://Resource/GameObject/Enemy/archer/arrow/arrow_left.tscn").instantiate())
 	

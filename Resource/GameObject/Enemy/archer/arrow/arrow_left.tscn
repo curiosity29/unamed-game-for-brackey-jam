@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c67ri3osjtyvd"]
+
+[ext_resource type="Script" uid="uid://bif0e7ym248fb" path="res://Resource/GameObject/Enemy/archer/arrow/arrow.gd" id="1_leys4"]
+[ext_resource type="Script" uid="uid://bl1tnphjxuelc" path="res://PureScript/BaseNode/damage_area.gd" id="2_7mpjv"]
+[ext_resource type="Texture2D" uid="uid://27jm8esqom1r" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_008.png" id="3_gseig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6fm2"]
+atlas = ExtResource("3_gseig")
+region = Rect2(1470.21, 404.048, 365.941, 227.85)
+
+[node name="arrow_left" type="CharacterBody2D"]
+script = ExtResource("1_leys4")
+
+[node name="DamageArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 129
+monitoring = false
+monitorable = false
+script = ExtResource("2_7mpjv")
+destroy_owner_on_hit = true
+metadata/_custom_type_script = ExtResource("2_7mpjv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea2D"]
+position = Vector2(46.3164, 15.0597)
+rotation = -0.00216605
+scale = Vector2(1, 0.761344)
+polygon = PackedVector2Array(-13.9349, -30.0303, -7.95441, -21.0173, 9.02602, -11.9804, 11.0477, -21.9761, 11.0759, -34.976, -0.919693, -37.0021, -10.9197, -37.0238, -10.9544, -21.0238)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(71.0056, -0.446379)
+rotation = -3.01002
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_s6fm2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
