@@ -1,5 +1,8 @@
 extends CharacterBody2D
-@export var move_speed: float = 50
+@export var move_speed: float = 400
+@export var gravity = 50
+var velocity_vector: Vector2
+@onready var destroyTimer =$Timer
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 var player: Player:
 	get: return Instance.player
@@ -9,24 +12,17 @@ var player_position: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
-	rotation = direction.angle_to(direction)
 	nav_agent.target_position = player.global_position
 	player_position = player.global_position
+	direction = (player_position - global_position).normalized()
+	velocity_vector = direction  * move_speed
+	rotation = velocity_vector.angle()
+	
 
 	
 func _process(delta: float) -> void:
-	rotation = direction.angle_to(direction)
-	
-	direction = (player_position - global_position).normalized()
-
-
-
-	
-
-	
-		
-		
-	
-	velocity = velocity.move_toward(direction * move_speed,delta * move_speed)
+	velocity_vector.y += gravity * delta
+	global_position += velocity_vector * delta 
+	rotation = velocity_vector.angle()
 	
 	move_and_slide()

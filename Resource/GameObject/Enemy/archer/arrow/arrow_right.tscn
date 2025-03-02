@@ -9,6 +9,8 @@ atlas = ExtResource("3_hcjnk")
 region = Rect2(1470.21, 404.048, 365.941, 227.85)
 
 [node name="arrow_right" type="CharacterBody2D"]
+position = Vector2(148, 28)
+rotation = -0.349898
 script = ExtResource("1_xbqa4")
 
 [node name="DamageArea2D" type="Area2D" parent="."]

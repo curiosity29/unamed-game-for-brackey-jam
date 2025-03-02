@@ -9,6 +9,7 @@ atlas = ExtResource("3_gseig")
 region = Rect2(1470.21, 404.048, 365.941, 227.85)
 
 [node name="arrow_left" type="CharacterBody2D"]
+position = Vector2(-175, -6)
 script = ExtResource("1_leys4")
 
 [node name="DamageArea2D" type="Area2D" parent="."]
@@ -33,3 +34,6 @@ scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_s6fm2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
