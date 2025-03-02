@@ -12,6 +12,7 @@ var player_position: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
+	destroyTimer.timeout.connect(_on_timer_timeout)  
 	nav_agent.target_position = player.global_position
 	player_position = player.global_position
 	direction = (player_position - global_position).normalized()
@@ -24,5 +25,9 @@ func _process(delta: float) -> void:
 	velocity_vector.y += gravity * delta
 	global_position += velocity_vector * delta 
 	rotation = velocity_vector.angle()
+	if is_on_floor():
+		destroyTimer.start()
 	
 	move_and_slide()
+func _on_timer_timeout():
+	queue_free()

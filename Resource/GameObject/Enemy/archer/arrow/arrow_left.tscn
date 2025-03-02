@@ -13,10 +13,10 @@ position = Vector2(-175, -6)
 script = ExtResource("1_leys4")
 
 [node name="DamageArea2D" type="Area2D" parent="."]
+position = Vector2(52, 3.8147e-06)
+rotation = -0.237839
 collision_layer = 0
-collision_mask = 129
-monitoring = false
-monitorable = false
+collision_mask = 128
 script = ExtResource("2_7mpjv")
 destroy_owner_on_hit = true
 metadata/_custom_type_script = ExtResource("2_7mpjv")
@@ -29,7 +29,7 @@ polygon = PackedVector2Array(-13.9349, -30.0303, -7.95441, -21.0173, 9.02602, -1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(71.0056, -0.446379)
-rotation = -3.01002
+rotation = -0.372344
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_s6fm2")
 
@@ -37,3 +37,8 @@ texture = SubResource("AtlasTexture_s6fm2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(107, -7)
+rotation = -0.140834
+polygon = PackedVector2Array(-104.327, 8.76775, -81.2604, 9.73354, -53.3188, 6.09129, -39.6463, 3.62906, -36.3963, 0.55703, -49.548, -4.2422, -63.3095, 1.38107, -83.4689, -1.71735, -100.81, -3.78735)
