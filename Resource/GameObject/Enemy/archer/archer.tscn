@@ -1,23 +1,30 @@
-[gd_scene load_steps=27 format=3 uid="uid://cscp8j5sbm4om"]
+[gd_scene load_steps=52 format=3 uid="uid://cscp8j5sbm4om"]
 
 [ext_resource type="Script" uid="uid://dsqienf4ol67x" path="res://Resource/GameObject/Enemy/archer/archer.gd" id="1_1tpth"]
 [ext_resource type="Texture2D" uid="uid://bu7u25ssqv38e" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_000.png" id="2_am73w"]
+[ext_resource type="Texture2D" uid="uid://b368dlukr0twl" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_left000.png" id="2_k0a8g"]
 [ext_resource type="Texture2D" uid="uid://bsfea2yulro7a" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_001.png" id="3_06le6"]
 [ext_resource type="Texture2D" uid="uid://bnxrj5241o0aj" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_003.png" id="3_14aqw"]
+[ext_resource type="Texture2D" uid="uid://uwdij8t6aidq" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_left001.png" id="3_f1ns2"]
 [ext_resource type="Texture2D" uid="uid://dn8ff7td8srux" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_000.png" id="3_mp5vy"]
 [ext_resource type="Texture2D" uid="uid://i5323ywgfs40" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_004.png" id="4_3ox80"]
+[ext_resource type="Texture2D" uid="uid://nbh52y1bfc7o" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_left002.png" id="4_hinwd"]
 [ext_resource type="Texture2D" uid="uid://cyfyafi28v63b" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_001.png" id="4_mw58g"]
 [ext_resource type="Texture2D" uid="uid://b1nh7vnnimg5o" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_002.png" id="4_n5wre"]
 [ext_resource type="Texture2D" uid="uid://cmnouvcd0li5g" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_002.png" id="5_0n3my"]
 [ext_resource type="Texture2D" uid="uid://6aorou4nnkwd" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_003.png" id="5_38u2n"]
+[ext_resource type="Texture2D" uid="uid://bkky0rk1uewi8" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_left003.png" id="5_pxb4k"]
 [ext_resource type="Texture2D" uid="uid://cj6jhk6s6rdcm" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_005.png" id="5_s1r12"]
 [ext_resource type="Texture2D" uid="uid://ccthkv1olp7de" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_003.png" id="6_4k8vg"]
+[ext_resource type="Texture2D" uid="uid://cm4c1ksce5ixh" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_left004.png" id="6_b162y"]
 [ext_resource type="Texture2D" uid="uid://s3blu62ptf8q" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_004.png" id="6_kljj7"]
 [ext_resource type="Texture2D" uid="uid://dg2llabynb373" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_006.png" id="6_vpx0v"]
 [ext_resource type="Texture2D" uid="uid://bogl56ihh8xqo" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_004.png" id="7_6m6wp"]
 [ext_resource type="Texture2D" uid="uid://d04b77etop0wg" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_007.png" id="7_fx6gn"]
+[ext_resource type="Texture2D" uid="uid://dqsj5f8ekd1yt" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_left005.png" id="7_i8esn"]
 [ext_resource type="Texture2D" uid="uid://ln7ou40odel1" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_005.png" id="7_wtqdv"]
 [ext_resource type="Texture2D" uid="uid://cpq8mfa621kdf" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_006.png" id="8_1et58"]
+[ext_resource type="Texture2D" uid="uid://4lrcmie5mnu0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__ATTACK_left006.png" id="8_je4tg"]
 [ext_resource type="Texture2D" uid="uid://4f06jdsl7ubs" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_008.png" id="8_n3vsq"]
 [ext_resource type="Texture2D" uid="uid://dk11vqj666x4r" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_005.png" id="8_rjbu2"]
 [ext_resource type="Texture2D" uid="uid://c5m5hpttmf7s5" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_006.png" id="9_5cvya"]
@@ -25,10 +32,49 @@
 [ext_resource type="Texture2D" uid="uid://mldlrfawljtn" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_007.png" id="10_xdw7y"]
 [ext_resource type="Texture2D" uid="uid://ddxed2oat1gpc" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_008.png" id="11_am73w"]
 [ext_resource type="Texture2D" uid="uid://k2rv23s1hyxu" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_009.png" id="12_06le6"]
+[ext_resource type="Texture2D" uid="uid://blcl3yrd6mqnh" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left000.png" id="16_l07po"]
+[ext_resource type="Texture2D" uid="uid://5v53o5b1gm66" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left001.png" id="17_x6kdl"]
+[ext_resource type="Texture2D" uid="uid://r7a5n2l7wxt0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left002.png" id="18_0khug"]
+[ext_resource type="Texture2D" uid="uid://bxvf8brqo2qk2" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left003.png" id="19_d0upa"]
+[ext_resource type="Texture2D" uid="uid://bwf1or43sv7yy" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left004.png" id="20_ifut7"]
+[ext_resource type="Texture2D" uid="uid://ba3d2rlf2ynrm" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left005.png" id="21_eeas1"]
+[ext_resource type="Texture2D" uid="uid://b3juwetx1malu" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left006.png" id="22_ewaqr"]
+[ext_resource type="Texture2D" uid="uid://evf5swqp1f4p" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left007.png" id="23_p24u4"]
+[ext_resource type="Texture2D" uid="uid://d0lsvwghjfp8t" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__JUMP_left009.png" id="24_ujmo1"]
+[ext_resource type="Texture2D" uid="uid://87c63lshy8q0" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left001.png" id="35_00crf"]
+[ext_resource type="Texture2D" uid="uid://dx2hsdkhr8aj7" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left002.png" id="36_pmcrt"]
+[ext_resource type="Texture2D" uid="uid://j5tibfqpvokw" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left003.png" id="37_ii7bx"]
+[ext_resource type="Texture2D" uid="uid://cjx824765ykn3" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left004.png" id="38_qfajr"]
+[ext_resource type="Texture2D" uid="uid://bppg632eo4vtr" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left005.png" id="39_301nm"]
+[ext_resource type="Texture2D" uid="uid://bmy0ml340qtx7" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left006.png" id="40_87fow"]
+[ext_resource type="Texture2D" uid="uid://blynlm8a7h7ql" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left007.png" id="41_qq2re"]
+[ext_resource type="Texture2D" uid="uid://be4xxyptyua5v" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left008.png" id="42_iw6h7"]
+[ext_resource type="Texture2D" uid="uid://c8g6225celoip" path="res://Resource/GameObject/Enemy/MaterialEnemy/Graphic/Archer/1/Elf_01__WALK_left009.png" id="43_nbaj7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rflxi"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k0a8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f1ns2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hinwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxb4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b162y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i8esn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_je4tg")
+}],
 "loop": true,
 "name": &"attack_left",
 "speed": 5.0
@@ -59,7 +105,34 @@ animations = [{
 "name": &"attack_right",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_l07po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_x6kdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0khug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d0upa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ifut7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_eeas1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ewaqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_p24u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ujmo1")
+}],
 "loop": true,
 "name": &"jump_left",
 "speed": 5.0
@@ -99,7 +172,34 @@ animations = [{
 "name": &"jump_right",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_00crf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pmcrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ii7bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_qfajr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_301nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_87fow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qq2re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_iw6h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_nbaj7")
+}],
 "loop": true,
 "name": &"walk_left",
 "speed": 5.0
@@ -140,15 +240,16 @@ animated = NodePath("AnimatedSprite2D")
 distance = 800.0
 health = 30
 
+[node name="Timer_animation" type="Timer" parent="."]
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="Hitbox" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 65
-collision_mask = 65
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(92.9999, 28.0004, 106, 15.0005, 133, -16.9994, 136, -53.9994, 122, -90.9995, 123.001, -133.999, 106.001, -138, 82.0007, -160, 62.0008, -189, 11.0009, -196, -9.99909, -204, -58.9991, -210, -88.9991, -212, -95.9992, -183, -98.9993, -157, -120.999, -114.001, -128, -105.001, -148.999, -117.001, -145, -80.0006, -163, -78.0007, -184, -96.0008, -158, -67.0007, -147, -43.0007, -144, -15.0006, -121, 11.9995, -105, 38.9995, -141, 58.9994, -136, 106.999, -133.001, 179.999, -118.001, 200.999, -100.001, 231, -81.0011, 252, -50.0013, 291, -5.00138, 308, 48.9987, 291, 64.9987, 296, 84.9988, 258, 71.9991, 210, 64.9991, 194, 89.9991, 209, 119.999, 220.001, 129.999, 197.001, 143.999, 152.001, 119.999, 128.001, 92.9996, 99.0004, 85.9997, 65.0004)
 
 [node name="Timer" type="Timer" parent="."]
@@ -156,10 +257,13 @@ wait_time = 3.0
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_rflxi")
-animation = &"attack_right"
+animation = &"walk_left"
+frame_progress = 0.086543
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(92.9999, 28.0004, 106, 15.0005, 133, -16.9994, 136, -53.9994, 122, -90.9995, 123.001, -133.999, 106.001, -138, 82.0007, -160, 62.0008, -189, 11.0009, -196, -9.99909, -204, -58.9991, -210, -88.9991, -212, -95.9992, -183, -98.9993, -157, -120.999, -114.001, -128, -105.001, -148.999, -117.001, -145, -80.0006, -163, -78.0007, -184, -96.0008, -158, -67.0007, -147, -43.0007, -144, -15.0006, -121, 11.9995, -105, 38.9995, -141, 58.9994, -136, 106.999, -133.001, 179.999, -118.001, 200.999, -100.001, 231, -81.0011, 252, -50.0013, 291, -5.00138, 308, 48.9987, 291, 64.9987, 296, 84.9988, 258, 71.9991, 210, 64.9991, 194, 89.9991, 209, 119.999, 220.001, 129.999, 197.001, 143.999, 152.001, 119.999, 128.001, 92.9996, 99.0004, 85.9997, 65.0004)
+
+[connection signal="timeout" from="Timer_animation" to="." method="_on_timer_animation_timeout"]
