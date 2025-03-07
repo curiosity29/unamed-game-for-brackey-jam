@@ -259,8 +259,7 @@ autostart = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_rflxi")
-animation = &"walk_left"
-frame_progress = 0.086543
+animation = &"attack_left"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.3, 0.3)

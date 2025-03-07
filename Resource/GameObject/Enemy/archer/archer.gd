@@ -13,7 +13,7 @@ func _ready():
 	attack_timer.timeout.connect(_on_timer_timeout)
 	attack_timer.start()
 	animated.frame_changed.connect(_on_animation_frame_changed)
-
+	animated.play("walk_right")
 
 
 func _on_timer_timeout():
@@ -50,10 +50,10 @@ func attack() -> void:
 	
 	if left_or_right == 2:
 		animated.play("attack_right")
-		#add_child(load("res://Resource/GameObject/Enemy/archer/arrow/arrow_right.tscn").instantiate())
+		
 	elif left_or_right == 1:
 		animated.play("attack_left")
-		#add_child(load("res://Resource/GameObject/Enemy/archer/arrow/arrow_left.tscn").instantiate())
+		
 	animation_timer.start()
 	
 func _on_animation_frame_changed():

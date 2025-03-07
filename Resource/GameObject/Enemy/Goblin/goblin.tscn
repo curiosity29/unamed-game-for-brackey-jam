@@ -212,3 +212,7 @@ polygon = PackedVector2Array(-131, -194, -7, -237, 74, -222, 152, -179, 182, -85
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="animatedTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="animatedTimer" to="." method="_on_animated_timer_timeout"]

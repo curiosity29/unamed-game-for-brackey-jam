@@ -36,7 +36,11 @@ func _process(delta: float) -> void:
 	
 		velocity = velocity.move_toward(direction * move_speed, move_speed * acceleration_mult)
 	
-		move_and_slide()
+		
+	else:
+		velocity = Vector2.ZERO
+	
+	move_and_slide()
 
 
 	

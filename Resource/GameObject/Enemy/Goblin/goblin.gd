@@ -1,5 +1,6 @@
 extends "res://Scene/Base/enemy.gd"
 @onready var attack_timer = $Timer
+@onready var animated_Timer = $animatedTimer
 var left_or_right: int 
 @export var animated: AnimatedSprite2D
 @export var damage_left: Area2D
@@ -10,10 +11,14 @@ var can_attack: bool = true
 func _ready():
 	super()
 	attack_timer.timeout.connect(_on_timer_timeout)
+	animated_Timer.timeout.connect(_on_animated_timer_timeout)
+	
 
 	attack_timer.start()
 func _on_timer_timeout():
 	can_attack = true
+func _on_animated_timer_timeout():
+	is_attack = false
 
 func _physics_process(_delta: float) -> void:
 	
@@ -50,4 +55,5 @@ func attack() -> void:
 	if left_or_right == 1:
 		damage_left.monitoring = true
 		animated.play("attack_left")
+	animated_Timer.start()
 		
